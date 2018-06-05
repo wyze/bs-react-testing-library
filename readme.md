@@ -35,12 +35,17 @@ $ npm install --save-dev bs-react-testing-library
 open Jest;
 
 describe("Component", () => {
-  open ExpectJs;
+  open Expect;
 
   test("renders", () => {
-    let component = ReactShallowRenderer.renderWithRenderer(<Component />);
-
-    expect(Js.Undefined.return(component)) |> toBeDefined;
+    (
+      <div style=ReactDOMRe.Style.make(~color="rebeccapurple", ())>
+        <h1> {ReasonReact.string("Heading")} </h1>
+      </div>
+    )
+      |> render
+      |> expect
+      |> toMatchSnapshot;
   });
 });
 ```
