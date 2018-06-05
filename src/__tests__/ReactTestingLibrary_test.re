@@ -1,7 +1,5 @@
 open Jest;
 
-type t;
-
 module Test = {
   let component = ReasonReact.statelessComponent("Test");
 
@@ -24,14 +22,9 @@ module Greeting = {
 [@bs.get] external firstChild : Dom.element => Dom.node = "";
 [@bs.get] external innerHTML : Dom.node => string = "";
 
-[@bs.get] external log : unit => t = "console.log";
-
 describe("ReactTestingLibrary", () => {
   open ReactTestingLibrary;
   open Expect;
-
-  let getFirstChild = element =>
-    element |> render |> container |> firstChild;
 
   let element = (
     <div style=ReactDOMRe.Style.make(~color="rebeccapurple", ())>
