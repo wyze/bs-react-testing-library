@@ -1,0 +1,15 @@
+# Dependencies
+node_modules
+
+# Build
+coverage
+src/**/*.bs.js
+lib
+.bsb.lock
+.merlin
+
+# Logs
+*.log
+
+# macOS
+.*DS_Store

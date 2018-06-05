@@ -1,0 +1,34 @@
+{
+  "name": "bs-react-testing-library",
+  "bsc-flags": [
+    "-bs-no-version-header",
+    "-bs-super-errors"
+  ],
+  "reason": {
+    "react-jsx": 2
+  },
+  "refmt": 3,
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "bs-dependencies": [
+    "bs-dom-testing-library",
+    "reason-react"
+  ],
+  "bs-dev-dependencies": [
+    "bs-jest"
+  ],
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": [
+        {
+          "dir": "__tests__",
+          "type": "dev"
+        }
+      ]
+    }
+  ]
+}
