@@ -19,6 +19,7 @@ module Greeting = {
   };
 };
 
+external unsafeAsElement : Dom.node => Dom.element = "%identity";
 [@bs.get] external firstChild : Dom.element => Dom.node = "";
 [@bs.get] external innerHTML : Dom.node => string = "";
 
@@ -51,7 +52,7 @@ describe("ReactTestingLibrary", () => {
     });
 
     test("works", () => {
-      let _ = element |> render |> debug;
+      let _ = element |> render |> debug();
 
       let _ = [%raw {|expect(console.log).toHaveBeenCalledTimes(1)|}];
       let _ = [%raw {|
@@ -62,25 +63,21 @@ describe("ReactTestingLibrary", () => {
 
       pass;
     });
-  });
 
-  describe("renderIntoDocument", () => {
-    open JestJs;
+    test("works with element argument", () => {
+      let result = element |> render;
+      let el = result |> container |> firstChild |> unsafeAsElement;
 
-    afterEach(cleanup);
+      let _ = result |> debug(~el, ());
 
-    test("works", () => {
-      let mock = JestJs.fn(() => ());
-      let spy = mock |> MockJs.fn;
+      let _ = [%raw {|expect(console.log).toHaveBeenCalledTimes(1)|}];
+      let _ = [%raw {|
+        expect(console.log).toHaveBeenCalledWith(
+          expect.stringContaining('Heading')
+        )
+      |}];
 
-      let _ = renderIntoDocument(<Test spy />);
-
-      cleanup();
-
-      let html = [%raw {|document.body.innerHTML|}];
-
-      html |> expect |> toBe("") |> ignore;
-      mock |> MockJs.calls |> Array.length |> expect |> toBe(1);
+      pass;
     });
   });
 

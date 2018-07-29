@@ -35,25 +35,29 @@ module Simulate: {
 };
 
 type renderResult;
-type renderOptions = {. "container": Js.undefined(Dom.element)};
+type renderOptions = {
+  .
+  "baseElement": Js.undefined(Dom.element),
+  "container": Js.undefined(Dom.element),
+};
 
-[@bs.module "react-testing-library"]
-external cleanup : unit => unit = "";
+[@bs.module "react-testing-library"] external cleanup : unit => unit = "";
 
-[@bs.module "react-testing-library"]
-external renderIntoDocument : ReasonReact.reactElement => renderResult = "";
+[@bs.get] external container : renderResult => Dom.element = "";
 
-[@bs.get]
-external container : renderResult => Dom.element = "";
+[@bs.get] external baseElement : renderResult => Dom.element = "";
 
-[@bs.send.pipe : renderResult]
-external debug : unit = "";
+[@bs.send.pipe: renderResult] external unmount : unit => bool = "";
 
-[@bs.send.pipe : renderResult]
-external unmount : unit => bool = "";
-
-[@bs.send.pipe : renderResult]
+[@bs.send.pipe: renderResult]
 external rerender : ReasonReact.reactElement => unit = "";
 
 let render:
-  (~container: Dom.element=?, ReasonReact.reactElement) => renderResult;
+  (
+    ~baseElement: Dom.element=?,
+    ~container: Dom.element=?,
+    ReasonReact.reactElement
+  ) =>
+  renderResult;
+
+let debug: (~el: Dom.element=?, unit, renderResult) => unit;
