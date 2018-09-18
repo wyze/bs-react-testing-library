@@ -1,4 +1,4 @@
-include DomTestingLibrary;
+open DomTestingLibrary;
 
 module Simulate = {
   [@bs.module "react-testing-library"] [@bs.scope "Simulate"]
@@ -29,6 +29,22 @@ external _debug : Js.undefined(Dom.element) => unit = "debug";
 
 [@bs.send.pipe: renderResult]
 external rerender : ReasonReact.reactElement => unit = "";
+
+let getByAltText = (string, result) =>
+  getByAltText(string, result |> container);
+
+let getByPlaceholderText = (string, result) =>
+  getByPlaceholderText(string, result |> container);
+
+let getByTestId = (string, result) =>
+  getByTestId(string, result |> container);
+
+let getByText = (~matcher, ~options=?, result) =>
+  getByText(~matcher, ~options=?options, result |> container);
+
+let getByTitle = (string, result) => getByTitle(string, result |> container);
+
+let getByValue = (string, result) => getByValue(string, result |> container);
 
 let render = (~baseElement=?, ~container=?, element) => {
   let baseElement_ =

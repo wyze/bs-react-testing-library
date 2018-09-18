@@ -29,13 +29,27 @@ describe("ReactTestingLibrary", () => {
 
   let element = (
     <div style=ReactDOMRe.Style.make(~color="rebeccapurple", ())>
-      <h1> {ReasonReact.string("Heading")} </h1>
+      (
+        ReasonReact.cloneElement(
+          <h1 />,
+          ~props={"data-testid": "h1-heading"},
+          [|ReasonReact.string("Heading")|]
+        )
+      )
     </div>
   );
 
   test("render works", () => {
     element
       |> render
+      |> expect
+      |> toMatchSnapshot;
+  });
+
+  test("getByTestId works", () => {
+    element
+      |> render
+      |> getByTestId("h1-heading")
       |> expect
       |> toMatchSnapshot;
   });

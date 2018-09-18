@@ -1,11 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ReactTestingLibrary getByTestId works 1`] = `
+<h1
+  data-testid="h1-heading"
+>
+  Heading
+</h1>
+`;
+
 exports[`ReactTestingLibrary render works 1`] = `
 Object {
   "baseElement": <body>
     <div>
       <div>
-        <h1>
+        <h1
+          data-testid="h1-heading"
+        >
           Heading
         </h1>
       </div>
@@ -13,7 +23,9 @@ Object {
   </body>,
   "container": <div>
     <div>
-      <h1>
+      <h1
+        data-testid="h1-heading"
+      >
         Heading
       </h1>
     </div>
