@@ -2,6 +2,7 @@
 
 [![Build Status][travis-image]][travis-url]
 [![npm][npm-image]][npm-url]
+[![Coveralls][coveralls-image]][coveralls-url]
 
 > [BuckleScript](//github.com/BuckleScript/bucklescript) bindings for [react-testing-library](//github.com/kentcdodds/react-testing-library).
 
@@ -27,27 +28,23 @@ $ npm install --save-dev bs-react-testing-library
 }
 ```
 
-#### With [`bs-jest`](//github.com/reasonml-community/bs-jest)
+#### With [`bs-jest`](//github.com/glennsl/bs-jest)
 
 ```ocaml
 /* Component_test.re */
 
 open Jest;
+open Expect;
+open ReactTestingLibrary;
 
-describe("Component", () => {
-  open Expect;
-
-  test("renders", () => {
-    (
-      <div style=ReactDOMRe.Style.make(~color="rebeccapurple", ())>
-        <h1> {ReasonReact.string("Heading")} </h1>
-      </div>
-    )
-      |> render
-      |> expect
-      |> toMatchSnapshot;
-  });
-});
+test("Component renders", () =>
+  <div style=ReactDOMRe.Style.make(~color="rebeccapurple", ())>
+    <h1> {ReasonReact.string("Heading")} </h1>
+  </div>
+  |> render
+  |> expect
+  |> toMatchSnapshot
+);
 ```
 
 ## Examples
@@ -93,3 +90,6 @@ MIT © [Neil Kistner](https://neilkistner.com)
 
 [npm-image]: https://img.shields.io/npm/v/bs-react-testing-library.svg?style=flat-square
 [npm-url]: https://npm.im/bs-react-testing-library
+
+[coveralls-image]: https://img.shields.io/coveralls/github/wyze/bs-react-testing-library.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/github/wyze/bs-react-testing-library

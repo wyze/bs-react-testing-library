@@ -22,6 +22,7 @@
     "jest": "jest",
     "prebuild": "yarn clean",
     "pretest": "yarn build",
+    "preversion": "yarn build",
     "test": "yarn jest",
     "version": "write-changelog"
   },
@@ -35,7 +36,7 @@
     "react-testing-library": "^5.0.1"
   },
   "peerDependencies": {
-    "reason-react": "^0.4.0 || ^0.3.0"
+    "reason-react": "< 0.6.0"
   },
   "devDependencies": {
     "bs-jest": "^0.3.2",

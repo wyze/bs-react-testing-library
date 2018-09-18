@@ -2,9 +2,7 @@ sudo: false
 
 language: node_js
 
-node_js:
-  - 10
-  - 8
+node_js: 8
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -15,3 +13,14 @@ cache:
   directories:
     - $HOME/.cache
     - node_modules
+
+jobs:
+  include:
+    - stage: test
+      script: yarn test --maxWorkers=2
+    - stage: test
+      node_js: 10
+      script: yarn test --maxWorkers=2
+    - stage: code coverage
+      install: yarn add --dev coveralls
+      script: yarn test --maxWorkers=2 --coverage --coverageReporters=text-lcov | coveralls
