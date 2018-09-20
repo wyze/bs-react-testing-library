@@ -75,11 +75,11 @@ $ yarn test
 
 > [Full Change Log](changelog.md)
 
-### [v0.2.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.2.0) (2018-07-29)
+### [v0.3.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.3.0) (2018-09-20)
 
-* [[`e515c3437d`](https://github.com/wyze/bs-react-testing-library/commit/e515c3437d)] - Upgrade dependencies and code to go with it (Neil Kistner)
-* [[`7efd67d19e`](https://github.com/wyze/bs-react-testing-library/commit/7efd67d19e)] - Remove unused code in test (Neil Kistner)
-* [[`6a4ac2804f`](https://github.com/wyze/bs-react-testing-library/commit/6a4ac2804f)] - Update readme with proper usage (Neil Kistner)
+* [[`a92da35f6f`](https://github.com/wyze/bs-react-testing-library/commit/a92da35f6f)] - Meta file updates (Neil Kistner)
+* [[`78128d354b`](https://github.com/wyze/bs-react-testing-library/commit/78128d354b)] - Update API with new queries from bs-dom-testing-library (Neil Kistner)
+* [[`bb5082301a`](https://github.com/wyze/bs-react-testing-library/commit/bb5082301a)] - Upgrade dependencies (Neil Kistner)
 
 ## License
 
