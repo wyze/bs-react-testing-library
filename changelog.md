@@ -1,5 +1,10 @@
 ## Change Log
 
+### [v0.4.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.4.0) (2018-10-11)
+
+* [[`0ce29af4d8`](https://github.com/wyze/bs-react-testing-library/commit/0ce29af4d8)] - Remove non-functioning Simulate module (Neil Kistner)
+* [[`7b2350237a`](https://github.com/wyze/bs-react-testing-library/commit/7b2350237a)] - Upgrade dependencies and expose FireEvent from `bs-dom-testing-library` (Neil Kistner)
+
 ### [v0.3.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.3.0) (2018-09-20)
 
 * [[`a92da35f6f`](https://github.com/wyze/bs-react-testing-library/commit/a92da35f6f)] - Meta file updates (Neil Kistner)
