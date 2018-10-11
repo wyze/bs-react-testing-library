@@ -3,6 +3,8 @@ module Simulate: {
   external click : Dom.element => unit = "";
 };
 
+module FireEvent = DomTestingLibrary.FireEvent;
+
 type renderResult;
 type renderOptions = {
   .
