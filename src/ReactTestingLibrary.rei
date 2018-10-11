@@ -1,8 +1,3 @@
-module Simulate: {
-  [@bs.module "react-testing-library"] [@bs.scope "Simulate"]
-  external click : Dom.element => unit = "";
-};
-
 module FireEvent = DomTestingLibrary.FireEvent;
 
 type renderResult;
