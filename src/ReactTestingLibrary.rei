@@ -49,3 +49,7 @@ let render:
   renderResult;
 
 let debug: (~el: Dom.element=?, unit, renderResult) => unit;
+
+let waitForElement:
+  (~callback: unit => 'a=?, ~options: DomTestingLibrary.WaitForElement.options=?, unit) =>
+    Js.Promise.t('a);

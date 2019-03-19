@@ -19,6 +19,23 @@ module Greeting = {
   };
 };
 
+module AsyncTest = {
+  type action =
+    | Toggle;
+
+  let component = ReasonReact.reducerComponent("AsyncTest");
+
+  let make = (_children) => {
+    ...component,
+    initialState: () => "not yet",
+    reducer: (action, _state) => switch (action) {
+    | Toggle => ReasonReact.Update("ready")
+    },
+    didMount: (self) => self.send(Toggle),
+    render: (self) => <div>{ReasonReact.string(self.state)}</div>,
+  };
+};
+
 external unsafeAsElement : Dom.node => Dom.element = "%identity";
 [@bs.get] external firstChild : Dom.element => Dom.node = "";
 [@bs.get] external innerHTML : Dom.node => string = "";
@@ -110,5 +127,21 @@ describe("ReactTestingLibrary", () => {
     result |> rerender(<Greeting message="hey" />);
 
     check("hey");
+  });
+
+  testPromise("waitForElement", () => {
+    let result = render(<AsyncTest />);
+
+    result
+       waitForElement(~callback=() => result |> getByText(~matcher=`Str("ready")), ())
+       |> Js.Promise.then_((_)=> {
+         result
+           |> container
+           |> firstChild
+           |> innerHTML
+           |> expect
+           |> toEqual("ready")
+           |> Js.Promise.resolve
+       });
   });
 });

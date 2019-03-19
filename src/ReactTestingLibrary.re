@@ -55,3 +55,5 @@ let render = (~baseElement=?, ~container=?, element) => {
 };
 
 let debug = (~el=?, ()) => _debug(Js.Undefined.fromOption(el));
+
+let waitForElement = DomTestingLibrary.waitForElement;
