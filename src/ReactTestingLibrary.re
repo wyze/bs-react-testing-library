@@ -39,6 +39,9 @@ let getByTestId = (string, result) =>
 let getByText = (~matcher, ~options=?, result) =>
   getByText(~matcher, ~options=?options, result |> container);
 
+let getByLabelText = (~matcher, ~options=?, result) =>
+  getByLabelText(~matcher, ~options=?options, result |> container);
+
 let getByTitle = (string, result) => getByTitle(string, result |> container);
 
 let getByValue = (string, result) => getByValue(string, result |> container);

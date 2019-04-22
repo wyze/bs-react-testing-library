@@ -18,7 +18,7 @@
     "reason-react"
   ],
   "bs-dev-dependencies": [
-    "bs-jest"
+    "@glennsl/bs-jest"
   ],
   "sources": [
     {

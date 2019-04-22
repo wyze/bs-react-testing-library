@@ -33,6 +33,18 @@ let getByText:
   ) =>
   Dom.element;
 
+let getByLabelText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.Query.options=?,
+    renderResult
+  ) =>
+  Dom.element;
+
 let getByTitle: (string, renderResult) => Dom.element;
 
 let getByValue: (string, renderResult) => Dom.element;
