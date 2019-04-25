@@ -1,10 +1,10 @@
-# bs-react-testing-library
-
-[![Build Status][travis-image]][travis-url]
-[![npm][npm-image]][npm-url]
-[![Coveralls][coveralls-image]][coveralls-url]
+# bs-react-testing-library &middot; [![Build Status][circleci-image]][circleci-url] [![npm][npm-image]][npm-url] [![Coveralls][coveralls-image]][coveralls-url]
 
 > [BuckleScript](//github.com/BuckleScript/bucklescript) bindings for [react-testing-library](//github.com/kentcdodds/react-testing-library).
+
+## Documentation
+
+[**Read the docs**](//testing-library.com/docs/bs-react-testing-library/intro) | [Edit the docs](//github.com/alexkrolick/testing-library-docs)
 
 ## Installation
 
@@ -85,8 +85,8 @@ $ yarn test
 
 MIT © [Neil Kistner](https://neilkistner.com)
 
-[travis-image]: https://img.shields.io/travis/wyze/bs-react-testing-library.svg?style=flat-square
-[travis-url]: https://travis-ci.org/wyze/bs-react-testing-library
+[circleci-image]: https://img.shields.io/circleci/project/github/wyze/bs-react-testing-library.svg?style=flat-square
+[circleci-url]: https://circleci.com/gh/wyze/bs-react-testing-library
 
 [npm-image]: https://img.shields.io/npm/v/bs-react-testing-library.svg?style=flat-square
 [npm-url]: https://npm.im/bs-react-testing-library
