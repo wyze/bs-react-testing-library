@@ -1,6 +1,8 @@
 open DomTestingLibrary;
 
-module FireEvent = DomTestingLibrary.FireEvent;
+module FireEvent = {
+  include FireEvent;
+};
 
 type renderResult;
 type renderOptions = {
