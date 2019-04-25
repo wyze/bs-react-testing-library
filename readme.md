@@ -76,10 +76,12 @@ $ yarn test
 
 > [Full Change Log](changelog.md)
 
-### [v0.4.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.4.0) (2018-10-11)
+### [v0.5.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.5.0) (2019-04-24)
 
-* [[`0ce29af4d8`](https://github.com/wyze/bs-react-testing-library/commit/0ce29af4d8)] - Remove non-functioning Simulate module (Neil Kistner)
-* [[`7b2350237a`](https://github.com/wyze/bs-react-testing-library/commit/7b2350237a)] - Upgrade dependencies and expose FireEvent from `bs-dom-testing-library` (Neil Kistner)
+* Meta file updates ([@wyze](https://github.com/wyze) in [9e91c93](https://github.com/wyze/bs-react-testing-library/commit/9e91c93))
+* Fix `FireEvent` module ([@wyze](https://github.com/wyze) in [2e709fd](https://github.com/wyze/bs-react-testing-library/commit/2e709fd))
+* Upgrade dependencies ([@wyze](https://github.com/wyze) in [cd924da](https://github.com/wyze/bs-react-testing-library/commit/cd924da))
+* Improve readme example ([@benadamstyles](https://github.com/benadamstyles) in [#2](https://github.com/wyze/bs-react-testing-library/pull/2))
 
 ## License
 
