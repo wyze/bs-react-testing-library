@@ -55,8 +55,6 @@ describe("ReactTestingLibrary", () => {
   });
 
   describe("debug", () => {
-    open JestJs;
-
     beforeEach(() => {
       [%raw {|jest.spyOn(console, 'log').mockImplementation(() => {})|}];
     });

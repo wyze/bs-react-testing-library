@@ -1,5 +1,9 @@
 ## Change Log
 
+### [v0.6.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.6.0) (2019-07-05)
+
+* Upgrade `react-testing-library` to 8.0 ([@jihchi](https://github.com/jihchi) in [#?](https://github.com/testing-library/react-testing-library/pull/?))
+
 ### [v0.5.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.5.0) (2019-04-24)
 
 * Meta file updates ([@wyze](https://github.com/wyze) in [9e91c93](https://github.com/wyze/bs-react-testing-library/commit/9e91c93))

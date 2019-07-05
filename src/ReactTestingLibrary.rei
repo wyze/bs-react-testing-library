@@ -79,7 +79,7 @@ type renderOptions = {
   "container": Js.undefined(Dom.element),
 };
 
-[@bs.module "react-testing-library"] external cleanup : unit => unit = "";
+[@bs.module "@testing-library/react"] external cleanup : unit => unit = "";
 
 [@bs.get] external container : renderResult => Dom.element = "";
 
@@ -119,7 +119,7 @@ let getByLabelText:
 
 let getByTitle: (string, renderResult) => Dom.element;
 
-let getByValue: (string, renderResult) => Dom.element;
+let getByDisplayValue: (string, renderResult) => Dom.element;
 
 [@bs.send.pipe: renderResult]
 external rerender : ReasonReact.reactElement => unit = "";
