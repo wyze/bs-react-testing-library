@@ -2,7 +2,8 @@
 
 ### [v0.6.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.6.0) (2019-07-05)
 
-* Upgrade `react-testing-library` to 8.0 ([@jihchi](https://github.com/jihchi) in [#?](https://github.com/testing-library/react-testing-library/pull/?))
+* Upgrade `react-testing-library` to 8.0 ([@jihchi](https://github.com/jihchi) in [#5](https://github.com/testing-library/react-testing-library/pull/5))
+* Rename `getByValue` to `getByDisplayValue` ([@jihchi](https://github.com/jihchi) in [#5](https://github.com/testing-library/react-testing-library/pull/5))
 
 ### [v0.5.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.5.0) (2019-04-24)
 
