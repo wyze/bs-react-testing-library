@@ -1,5 +1,11 @@
 ## Change Log
 
+### [v0.6.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.6.0) (2019-07-21)
+
+* Upgrade `extend` to fix CVE-2018-16492 ([@wyze](https://github.com/wyze) in [535d526](https://github.com/wyze/bs-react-testing-library/commit/535d526))
+* Upgrade dependencies ([@wyze](https://github.com/wyze) in [5a73fe3](https://github.com/wyze/bs-react-testing-library/commit/5a73fe3))
+* Upgrade react-testing-library to v8 ([@jihchi](https://github.com/jihchi) in [#5](https://github.com/wyze/bs-react-testing-library/pull/5))
+
 ### [v0.5.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.5.0) (2019-04-24)
 
 * Meta file updates ([@wyze](https://github.com/wyze) in [9e91c93](https://github.com/wyze/bs-react-testing-library/commit/9e91c93))
