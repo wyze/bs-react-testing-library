@@ -33,7 +33,7 @@
     "testing"
   ],
   "dependencies": {
-    "@testing-library/react": "^8.0.4",
+    "@testing-library/react": "^8.0.5",
     "bs-dom-testing-library": "^0.5.0"
   },
   "peerDependencies": {
@@ -43,7 +43,7 @@
     "@glennsl/bs-jest": "^0.4.8",
     "@wyze/changelog": "^1.0.0",
     "@wyze/github-release": "^1.0.0",
-    "bs-platform": "^5.0.3",
+    "bs-platform": "^5.0.6",
     "npm-run-all": "^4.1.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

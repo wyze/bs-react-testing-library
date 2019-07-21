@@ -105,6 +105,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.5.4":
+  version "7.5.5"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
+  integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/template@^7.0.0", "@babel/template@^7.1.0", "@babel/template@^7.4.0":
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.4.0.tgz#12474e9c077bae585c5d835a95c0b0b790c25c8b"
@@ -323,18 +330,7 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@testing-library/dom@^5.0.0":
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-5.5.0.tgz#7c5024116ca8173187b52c538648884ac6b7b2f9"
-  integrity sha512-QuY/XBp9fquYXP1jklKlG0nUmFVLJXLWNYANmoFs25RDystdujLXxXSVhacVqL5oIF8ESThBzHFX1FUuV/J0kw==
-  dependencies:
-    "@babel/runtime" "^7.4.5"
-    "@sheerun/mutationobserver-shim" "^0.3.2"
-    aria-query "3.0.0"
-    pretty-format "^24.8.0"
-    wait-for-expect "^1.2.0"
-
-"@testing-library/dom@^5.6.0":
+"@testing-library/dom@^5.5.4", "@testing-library/dom@^5.6.0":
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-5.6.0.tgz#18a7c162a6a79964e731ad7b810022a28218047c"
   integrity sha512-nAsRvQLr/b6TGNjuHMEbWXCNPLrQYnzqa/KKQZL7wBOtfptUxsa4Ah9aqkHW0ZmCSFmUDj4nFUxWPVTeMu0iCw==
@@ -345,13 +341,13 @@
     pretty-format "^24.8.0"
     wait-for-expect "^1.2.0"
 
-"@testing-library/react@^8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-8.0.4.tgz#6ed405ba88b625ec53d7cfa78c038a950bafc1fa"
-  integrity sha512-omm4D00Z0aMaWfPRRP4X6zIaOVb0Kf1Yc1H5VE4id9D0pQRiBcTtmjbN0kZgT8rQGxHhVAuv1NuwFwMTwKzFqg==
+"@testing-library/react@^8.0.5":
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-8.0.5.tgz#2301011a8c5567eba59691860df19a3cfc9d7425"
+  integrity sha512-2EzVi7HjUUF8gKzB4s+oCJ1+F4VOrphO+DlUO6Ptgtcz1ko4J2zqnr0t7g+T7uedXXjJ0wdq70zQMhJXP3w37A==
   dependencies:
-    "@babel/runtime" "^7.4.5"
-    "@testing-library/dom" "^5.0.0"
+    "@babel/runtime" "^7.5.4"
+    "@testing-library/dom" "^5.5.4"
 
 "@types/babel__core@^7.1.0":
   version "7.1.1"
@@ -743,10 +739,10 @@ bs-dom-testing-library@^0.5.0:
   dependencies:
     "@testing-library/dom" "^5.6.0"
 
-bs-platform@^5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-5.0.3.tgz#2b167603ef52574cb9534fabab702f6013715e6c"
-  integrity sha512-GAeypBebeDGTay5kJ3v5Z3Whp1Q4zQ0hAttflVtPG3zps88xDZnVAlS3JGIIBDmJFEMyNtv5947a/IWKvWXcPw==
+bs-platform@^5.0.6:
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-5.0.6.tgz#88c13041fb020479800de3d82c680bf971091425"
+  integrity sha512-6Boa2VEcWJp2WJr38L7bp3J929nYha7gDarjxb070jWzgfPJ/WbzjipmSfnu2eqqk1MfjEIpBipbPz6n1NISwA==
 
 bser@^2.0.0:
   version "2.0.0"
@@ -2547,15 +2543,10 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
-lodash@^4.13.1:
-  version "4.17.10"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
-  integrity sha512-UejweD1pDoXu+AD825lWwp4ZGtSwgnpZxb3JDViD7StjQz+Nb/6l093lx4OQ0foGWNRoc19mWy7BzL+UAK2iVg==
-
-lodash@^4.17.11:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
-  integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+lodash@^4.13.1, lodash@^4.17.11:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
+  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
 loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1:
   version "1.3.1"
