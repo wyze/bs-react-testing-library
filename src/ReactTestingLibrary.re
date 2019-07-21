@@ -11,9 +11,9 @@ type renderOptions = {
   "container": Js.undefined(Dom.element),
 };
 
-[@bs.module "react-testing-library"] external cleanup : unit => unit = "";
+[@bs.module "@testing-library/react"] external cleanup : unit => unit = "";
 
-[@bs.module "react-testing-library"]
+[@bs.module "@testing-library/react"]
 external _render : (ReasonReact.reactElement, renderOptions) => renderResult =
   "render";
 
@@ -46,7 +46,7 @@ let getByLabelText = (~matcher, ~options=?, result) =>
 
 let getByTitle = (string, result) => getByTitle(string, result |> container);
 
-let getByValue = (string, result) => getByValue(string, result |> container);
+let getByDisplayValue = (string, result) => getByDisplayValue(string, result |> container);
 
 let render = (~baseElement=?, ~container=?, element) => {
   let baseElement_ =
