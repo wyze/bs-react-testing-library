@@ -30,23 +30,23 @@ external _debug : Js.undefined(Dom.element) => unit = "debug";
 external rerender : ReasonReact.reactElement => unit = "";
 
 let getByAltText = (string, result) =>
-  getByAltText(string, result |> container);
+  getByAltText(string, result |> baseElement);
 
 let getByPlaceholderText = (string, result) =>
-  getByPlaceholderText(string, result |> container);
+  getByPlaceholderText(string, result |> baseElement);
 
 let getByTestId = (string, result) =>
-  getByTestId(string, result |> container);
+  getByTestId(string, result |> baseElement);
 
 let getByText = (~matcher, ~options=?, result) =>
-  getByText(~matcher, ~options=?options, result |> container);
+  getByText(~matcher, ~options=?options, result |> baseElement);
 
 let getByLabelText = (~matcher, ~options=?, result) =>
-  getByLabelText(~matcher, ~options=?options, result |> container);
+  getByLabelText(~matcher, ~options=?options, result |> baseElement);
 
-let getByTitle = (string, result) => getByTitle(string, result |> container);
+let getByTitle = (string, result) => getByTitle(string, result |> baseElement);
 
-let getByDisplayValue = (string, result) => getByDisplayValue(string, result |> container);
+let getByDisplayValue = (string, result) => getByDisplayValue(string, result |> baseElement);
 
 let render = (~baseElement=?, ~container=?, element) => {
   let baseElement_ =

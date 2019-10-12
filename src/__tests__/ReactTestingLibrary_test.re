@@ -39,6 +39,10 @@ describe("ReactTestingLibrary", () => {
     </div>
   );
 
+  afterEach(() => {
+    cleanup();
+  });
+
   test("render works", () => {
     element
       |> render
