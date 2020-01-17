@@ -11,23 +11,23 @@ type renderOptions = {
   "container": Js.undefined(Dom.element),
 };
 
-[@bs.module "@testing-library/react"] external cleanup : unit => unit = "";
+[@bs.module "@testing-library/react"] external cleanup : unit => unit = "cleanup";
 
 [@bs.module "@testing-library/react"]
 external _render : (ReasonReact.reactElement, renderOptions) => renderResult =
   "render";
 
-[@bs.get] external container : renderResult => Dom.element = "";
+[@bs.get] external container : renderResult => Dom.element = "container";
 
-[@bs.get] external baseElement : renderResult => Dom.element = "";
+[@bs.get] external baseElement : renderResult => Dom.element = "baseElement";
 
 [@bs.send.pipe: renderResult]
 external _debug : Js.undefined(Dom.element) => unit = "debug";
 
-[@bs.send.pipe: renderResult] external unmount : unit => bool = "";
+[@bs.send.pipe: renderResult] external unmount : unit => bool = "unmount";
 
 [@bs.send.pipe: renderResult]
-external rerender : ReasonReact.reactElement => unit = "";
+external rerender : ReasonReact.reactElement => unit = "rerender";
 
 let getByAltText = (string, result) =>
   getByAltText(string, result |> container);
