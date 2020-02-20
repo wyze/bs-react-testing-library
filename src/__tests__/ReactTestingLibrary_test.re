@@ -20,8 +20,8 @@ module Greeting = {
 };
 
 external unsafeAsElement : Dom.node => Dom.element = "%identity";
-[@bs.get] external firstChild : Dom.element => Dom.node = "";
-[@bs.get] external innerHTML : Dom.node => string = "";
+[@bs.get] external firstChild : Dom.element => Dom.node = "firstChild";
+[@bs.get] external innerHTML : Dom.node => string = "innerHTML";
 
 describe("ReactTestingLibrary", () => {
   open ReactTestingLibrary;

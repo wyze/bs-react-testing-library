@@ -79,13 +79,13 @@ type renderOptions = {
   "container": Js.undefined(Dom.element),
 };
 
-[@bs.module "@testing-library/react"] external cleanup : unit => unit = "";
+[@bs.module "@testing-library/react"] external cleanup : unit => unit = "cleanup";
 
-[@bs.get] external container : renderResult => Dom.element = "";
+[@bs.get] external container : renderResult => Dom.element = "container";
 
-[@bs.get] external baseElement : renderResult => Dom.element = "";
+[@bs.get] external baseElement : renderResult => Dom.element = "baseElement";
 
-[@bs.send.pipe: renderResult] external unmount : unit => bool = "";
+[@bs.send.pipe: renderResult] external unmount : unit => bool = "unmount";
 
 let getByAltText: (string, renderResult) => Dom.element;
 
@@ -122,7 +122,7 @@ let getByTitle: (string, renderResult) => Dom.element;
 let getByDisplayValue: (string, renderResult) => Dom.element;
 
 [@bs.send.pipe: renderResult]
-external rerender : ReasonReact.reactElement => unit = "";
+external rerender : ReasonReact.reactElement => unit = "rerender";
 
 let render:
   (
