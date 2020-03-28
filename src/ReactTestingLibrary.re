@@ -11,42 +11,45 @@ type renderOptions = {
   "container": Js.undefined(Dom.element),
 };
 
-[@bs.module "@testing-library/react"] external cleanup : unit => unit = "cleanup";
+[@bs.module "@testing-library/react"]
+external cleanup: unit => unit = "cleanup";
 
 [@bs.module "@testing-library/react"]
-external _render : (ReasonReact.reactElement, renderOptions) => renderResult =
+external _render: (ReasonReact.reactElement, renderOptions) => renderResult =
   "render";
 
-[@bs.get] external container : renderResult => Dom.element = "container";
+[@bs.get] external container: renderResult => Dom.element = "container";
 
-[@bs.get] external baseElement : renderResult => Dom.element = "baseElement";
-
-[@bs.send.pipe: renderResult]
-external _debug : Js.undefined(Dom.element) => unit = "debug";
-
-[@bs.send.pipe: renderResult] external unmount : unit => bool = "unmount";
+[@bs.get] external baseElement: renderResult => Dom.element = "baseElement";
 
 [@bs.send.pipe: renderResult]
-external rerender : ReasonReact.reactElement => unit = "rerender";
+external _debug: Js.undefined(Dom.element) => unit = "debug";
+
+[@bs.send.pipe: renderResult] external unmount: unit => bool = "unmount";
+
+[@bs.send.pipe: renderResult]
+external rerender: ReasonReact.reactElement => unit = "rerender";
 
 let getByAltText = (string, result) =>
-  getByAltText(string, result |> container);
+  getByAltText(~matcher=`Str(string), result |> container);
 
 let getByPlaceholderText = (string, result) =>
-  getByPlaceholderText(string, result |> container);
+  getByPlaceholderText(~matcher=`Str(string), result |> container);
 
 let getByTestId = (string, result) =>
-  getByTestId(string, result |> container);
+  getByTestId(~matcher=`Str(string), result |> container);
 
 let getByText = (~matcher, ~options=?, result) =>
-  getByText(~matcher, ~options=?options, result |> container);
+  getByText(~matcher, ~options?, result |> container);
 
 let getByLabelText = (~matcher, ~options=?, result) =>
-  getByLabelText(~matcher, ~options=?options, result |> container);
+  getByLabelText(~matcher, ~options?, result |> container);
 
-let getByTitle = (string, result) => getByTitle(string, result |> container);
+let getByTitle = (string, result) =>
+  getByTitle(~matcher=`Str(string), result |> container);
 
-let getByDisplayValue = (string, result) => getByDisplayValue(string, result |> container);
+let getByDisplayValue = (string, result) =>
+  getByDisplayValue(~matcher=`Str(string), result |> container);
 
 let render = (~baseElement=?, ~container=?, element) => {
   let baseElement_ =

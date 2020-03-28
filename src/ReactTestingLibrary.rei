@@ -100,7 +100,7 @@ let getByText:
                 | `RegExp(Js.Re.t)
                 | `Str(string)
               ],
-    ~options: DomTestingLibrary.Query.options=?,
+    ~options: DomTestingLibrary.ByTextQuery.options=?,
     renderResult
   ) =>
   Dom.element;
@@ -112,7 +112,7 @@ let getByLabelText:
                 | `RegExp(Js.Re.t)
                 | `Str(string)
               ],
-    ~options: DomTestingLibrary.Query.options=?,
+    ~options: DomTestingLibrary.ByLabelTextQuery.options=?,
     renderResult
   ) =>
   Dom.element;
