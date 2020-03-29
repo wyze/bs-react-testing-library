@@ -1,4 +1,4 @@
-module FireEvent {
+module FireEvent: {
   let abort: (~eventInit: Js.t({..})=?, Dom.element) => unit;
   let animationEnd: (~eventInit: Js.t({..})=?, Dom.element) => unit;
   let animationIteration: (~eventInit: Js.t({..})=?, Dom.element) => unit;
@@ -73,19 +73,24 @@ module FireEvent {
 };
 
 type renderResult;
+type queries;
 type renderOptions = {
   .
-  "baseElement": Js.undefined(Dom.element),
   "container": Js.undefined(Dom.element),
+  "baseElement": Js.undefined(Dom.element),
+  "hydrate": Js.undefined(bool),
+  "wrapper": Js.undefined(Dom.element),
+  "queries": Js.undefined(queries),
 };
 
-[@bs.module "@testing-library/react"] external cleanup : unit => unit = "cleanup";
+[@bs.module "@testing-library/react"]
+external cleanup: unit => unit = "cleanup";
 
-[@bs.get] external container : renderResult => Dom.element = "container";
+[@bs.get] external container: renderResult => Dom.element = "container";
 
-[@bs.get] external baseElement : renderResult => Dom.element = "baseElement";
+[@bs.get] external baseElement: renderResult => Dom.element = "baseElement";
 
-[@bs.send.pipe: renderResult] external unmount : unit => bool = "unmount";
+[@bs.send.pipe: renderResult] external unmount: unit => bool = "unmount";
 
 let getByAltText: (string, renderResult) => Dom.element;
 
@@ -122,12 +127,15 @@ let getByTitle: (string, renderResult) => Dom.element;
 let getByDisplayValue: (string, renderResult) => Dom.element;
 
 [@bs.send.pipe: renderResult]
-external rerender : ReasonReact.reactElement => unit = "rerender";
+external rerender: ReasonReact.reactElement => unit = "rerender";
 
 let render:
   (
     ~baseElement: Dom.element=?,
     ~container: Dom.element=?,
+    ~hydrate: bool=?,
+    ~wrapper: Dom.element=?,
+    ~queries: queries=?,
     ReasonReact.reactElement
   ) =>
   renderResult;

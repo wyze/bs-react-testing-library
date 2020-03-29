@@ -5,10 +5,14 @@ module FireEvent = {
 };
 
 type renderResult;
+type queries;
 type renderOptions = {
   .
-  "baseElement": Js.undefined(Dom.element),
   "container": Js.undefined(Dom.element),
+  "baseElement": Js.undefined(Dom.element),
+  "hydrate": Js.undefined(bool),
+  "wrapper": Js.undefined(Dom.element),
+  "queries": Js.undefined(queries),
 };
 
 [@bs.module "@testing-library/react"]
@@ -51,7 +55,15 @@ let getByTitle = (string, result) =>
 let getByDisplayValue = (string, result) =>
   getByDisplayValue(~matcher=`Str(string), result |> container);
 
-let render = (~baseElement=?, ~container=?, element) => {
+let render =
+    (
+      ~baseElement=?,
+      ~container=?,
+      ~hydrate=?,
+      ~wrapper=?,
+      ~queries=?,
+      element,
+    ) => {
   let baseElement_ =
     switch (container) {
     | Some(container') => Js.Undefined.return(container')
@@ -59,7 +71,16 @@ let render = (~baseElement=?, ~container=?, element) => {
     };
   let container_ = Js.Undefined.fromOption(container);
 
-  _render(element, {"baseElement": baseElement_, "container": container_});
+  _render(
+    element,
+    {
+      "baseElement": baseElement_,
+      "container": container_,
+      "hydrate": Js.Undefined.fromOption(hydrate),
+      "wrapper": Js.Undefined.fromOption(wrapper),
+      "queries": Js.Undefined.fromOption(queries),
+    },
+  );
 };
 
 let debug = (~el=?, ()) => _debug(Js.Undefined.fromOption(el));
