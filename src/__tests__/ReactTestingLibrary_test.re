@@ -125,4 +125,12 @@ describe("ReactTestingLibrary", () => {
 
     check("hey");
   });
+
+  test("asFragment works", () => {
+    element
+      |> render
+      |> asFragment()
+      |> expect
+      |> toMatchSnapshot;
+  });
 });

@@ -35,6 +35,9 @@ external _debug: (Js.undefined(Dom.element), Js.undefined(int)) => unit =
 [@bs.send.pipe: renderResult]
 external rerender: ReasonReact.reactElement => unit = "rerender";
 
+[@bs.send.pipe: renderResult]
+external asFragment: unit => Dom.element = "asFragment";
+
 let getByAltText = (string, result) =>
   getByAltText(~matcher=`Str(string), result |> container);
 

@@ -92,6 +92,9 @@ external cleanup: unit => unit = "cleanup";
 
 [@bs.send.pipe: renderResult] external unmount: unit => bool = "unmount";
 
+[@bs.send.pipe: renderResult]
+external asFragment: unit => Dom.element = "asFragment";
+
 let getByAltText: (string, renderResult) => Dom.element;
 
 let getByPlaceholderText: (string, renderResult) => Dom.element;

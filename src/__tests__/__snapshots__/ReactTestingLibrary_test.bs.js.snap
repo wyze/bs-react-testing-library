@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ReactTestingLibrary asFragment works 1`] = `
+<DocumentFragment>
+  <div>
+    <h1
+      data-testid="h1-heading"
+    >
+      Heading
+    </h1>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`ReactTestingLibrary getByTestId works 1`] = `
 <h1
   data-testid="h1-heading"
