@@ -140,4 +140,5 @@ let render:
   ) =>
   renderResult;
 
-let debug: (~el: Dom.element=?, unit, renderResult) => unit;
+let debug:
+  (~el: Dom.element=?, ~maxLengthToPrint: int=?, unit, renderResult) => unit;

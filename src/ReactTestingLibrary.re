@@ -27,7 +27,8 @@ external _render: (ReasonReact.reactElement, renderOptions) => renderResult =
 [@bs.get] external baseElement: renderResult => Dom.element = "baseElement";
 
 [@bs.send.pipe: renderResult]
-external _debug: Js.undefined(Dom.element) => unit = "debug";
+external _debug: (Js.undefined(Dom.element), Js.undefined(int)) => unit =
+  "debug";
 
 [@bs.send.pipe: renderResult] external unmount: unit => bool = "unmount";
 
@@ -83,4 +84,8 @@ let render =
   );
 };
 
-let debug = (~el=?, ()) => _debug(Js.Undefined.fromOption(el));
+let debug = (~el=?, ~maxLengthToPrint=?, ()) =>
+  _debug(
+    Js.Undefined.fromOption(el),
+    Js.Undefined.fromOption(maxLengthToPrint),
+  );

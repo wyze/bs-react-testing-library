@@ -91,6 +91,22 @@ describe("ReactTestingLibrary", () => {
 
       pass;
     });
+
+    test("works with maxLengthToPrint argument", () => {
+      let result = element |> render;
+      let el = result |> container |> firstChild |> unsafeAsElement;
+
+      let _ = result |> debug(~el, ~maxLengthToPrint=10, ());
+
+      let _ = [%raw {|expect(console.log).toHaveBeenCalledTimes(1)|}];
+      let _ = [%raw {|
+        expect(console.log).toHaveBeenCalledWith(
+          expect.stringContaining('<div>...')
+        )
+      |}];
+
+      pass;
+    });
   });
 
   test("rerender works", () => {
