@@ -38,26 +38,153 @@ external rerender: ReasonReact.reactElement => unit = "rerender";
 [@bs.send.pipe: renderResult]
 external asFragment: unit => Dom.element = "asFragment";
 
-let getByAltText = (string, result) =>
-  getByAltText(~matcher=`Str(string), result |> container);
-
-let getByPlaceholderText = (string, result) =>
-  getByPlaceholderText(~matcher=`Str(string), result |> container);
-
-let getByTestId = (string, result) =>
-  getByTestId(~matcher=`Str(string), result |> container);
-
-let getByText = (~matcher, ~options=?, result) =>
-  getByText(~matcher, ~options?, result |> container);
+// ByLabelText
+[@bs.send.pipe: renderResult]
+external _getByLabelText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByLabelTextQuery.options)
+  ) =>
+  Dom.element =
+  "getByLabelText";
 
 let getByLabelText = (~matcher, ~options=?, result) =>
-  getByLabelText(~matcher, ~options?, result |> container);
+  _getByLabelText(
+    result,
+    ~matcher,
+    ~options=Js.Undefined.fromOption(options),
+  );
 
-let getByTitle = (string, result) =>
-  getByTitle(~matcher=`Str(string), result |> container);
+// ByPlaceholderText
+[@bs.send.pipe: renderResult]
+external _getByPlaceholderText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByPlaceholderTextQuery.options)
+  ) =>
+  Dom.element =
+  "getByPlaceholderText";
 
-let getByDisplayValue = (string, result) =>
-  getByDisplayValue(~matcher=`Str(string), result |> container);
+let getByPlaceholderText = (~matcher, ~options=?, result) =>
+  _getByPlaceholderText(
+    result,
+    ~matcher,
+    ~options=Js.Undefined.fromOption(options),
+  );
+
+// ByText
+[@bs.send.pipe: renderResult]
+external _getByText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByTextQuery.options)
+  ) =>
+  Dom.element =
+  "getByText";
+
+let getByText = (~matcher, ~options=?, result) =>
+  _getByText(result, ~matcher, ~options=Js.Undefined.fromOption(options));
+
+// ByAltText
+[@bs.send.pipe: renderResult]
+external _getByAltText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByAltTextQuery.options)
+  ) =>
+  Dom.element =
+  "getByAltText";
+
+let getByAltText = (~matcher, ~options=?, result) =>
+  _getByAltText(result, ~matcher, ~options=Js.Undefined.fromOption(options));
+
+// ByTitle
+[@bs.send.pipe: renderResult]
+external _getByTitle:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(DomTestingLibrary.ByTitleQuery.options)
+  ) =>
+  Dom.element =
+  "getByTitle";
+
+let getByTitle = (~matcher, ~options=?, result) =>
+  _getByTitle(result, ~matcher, ~options=Js.Undefined.fromOption(options));
+
+// ByDisplayValue
+[@bs.send.pipe: renderResult]
+external _getByDisplayValue:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(DomTestingLibrary.ByDisplayValueQuery.options)
+  ) =>
+  Dom.element =
+  "getByDisplayValue";
+
+let getByDisplayValue = (~matcher, ~options=?, result) =>
+  _getByDisplayValue(
+    result,
+    ~matcher,
+    ~options=Js.Undefined.fromOption(options),
+  );
+
+// ByRole
+[@bs.send.pipe: renderResult]
+external _getByRole:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(DomTestingLibrary.ByRoleQuery.options)
+  ) =>
+  Dom.element =
+  "getByRole";
+
+let getByRole = (~matcher, ~options=?, result) =>
+  _getByRole(result, ~matcher, ~options=Js.Undefined.fromOption(options));
+
+// ByTestId
+[@bs.send.pipe: renderResult]
+external _getByTestId:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(DomTestingLibrary.ByTestIdQuery.options)
+  ) =>
+  Dom.element =
+  "getByTestId";
+
+let getByTestId = (~matcher, ~options=?, result) =>
+  _getByTestId(result, ~matcher, ~options=Js.Undefined.fromOption(options));
 
 let render =
     (

@@ -95,24 +95,7 @@ external cleanup: unit => unit = "cleanup";
 [@bs.send.pipe: renderResult]
 external asFragment: unit => Dom.element = "asFragment";
 
-let getByAltText: (string, renderResult) => Dom.element;
-
-let getByPlaceholderText: (string, renderResult) => Dom.element;
-
-let getByTestId: (string, renderResult) => Dom.element;
-
-let getByText:
-  (
-    ~matcher: [
-                | `Func((string, Dom.element) => bool)
-                | `RegExp(Js.Re.t)
-                | `Str(string)
-              ],
-    ~options: DomTestingLibrary.ByTextQuery.options=?,
-    renderResult
-  ) =>
-  Dom.element;
-
+// ByLabelText
 let getByLabelText:
   (
     ~matcher: [
@@ -125,9 +108,96 @@ let getByLabelText:
   ) =>
   Dom.element;
 
-let getByTitle: (string, renderResult) => Dom.element;
+// ByPlaceholderText
+let getByPlaceholderText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.ByPlaceholderTextQuery.options=?,
+    renderResult
+  ) =>
+  Dom.element;
 
-let getByDisplayValue: (string, renderResult) => Dom.element;
+// ByText
+let getByText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.ByTextQuery.options=?,
+    renderResult
+  ) =>
+  Dom.element;
+
+// ByAltText
+let getByAltText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.ByAltTextQuery.options=?,
+    renderResult
+  ) =>
+  Dom.element;
+
+// ByTitle
+let getByTitle:
+  (
+    ~matcher: [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: DomTestingLibrary.ByTitleQuery.options=?,
+    renderResult
+  ) =>
+  Dom.element;
+
+// ByDisplayValue
+let getByDisplayValue:
+  (
+    ~matcher: [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: DomTestingLibrary.ByDisplayValueQuery.options=?,
+    renderResult
+  ) =>
+  Dom.element;
+
+// ByRole
+let getByRole:
+  (
+    ~matcher: [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: DomTestingLibrary.ByRoleQuery.options=?,
+    renderResult
+  ) =>
+  Dom.element;
+
+// ByTestId
+let getByTestId:
+  (
+    ~matcher: [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: DomTestingLibrary.ByTestIdQuery.options=?,
+    renderResult
+  ) =>
+  Dom.element;
 
 [@bs.send.pipe: renderResult]
 external rerender: ReasonReact.reactElement => unit = "rerender";

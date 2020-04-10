@@ -5,8 +5,10 @@ module Test = {
 
   let make = (~spy, _) => {
     ...component,
-    willUnmount: (_) => { spy(); },
-    render: (_) => <div />,
+    willUnmount: _ => {
+      spy();
+    },
+    render: _ => <div />,
   };
 };
 
@@ -15,63 +17,186 @@ module Greeting = {
 
   let make = (~message, _) => {
     ...component,
-    render: (_) => <div>{ReasonReact.string(message)}</div>,
+    render: _ => <div> {ReasonReact.string(message)} </div>,
   };
 };
 
-external unsafeAsElement : Dom.node => Dom.element = "%identity";
-[@bs.get] external firstChild : Dom.element => Dom.node = "firstChild";
-[@bs.get] external innerHTML : Dom.node => string = "innerHTML";
+external unsafeAsElement: Dom.node => Dom.element = "%identity";
+[@bs.get] external firstChild: Dom.element => Dom.node = "firstChild";
+[@bs.get] external innerHTML: Dom.node => string = "innerHTML";
 
 describe("ReactTestingLibrary", () => {
   open ReactTestingLibrary;
   open Expect;
 
-  let element = (
-    <div style=ReactDOMRe.Style.make(~color="rebeccapurple", ())>
-      (
-        ReasonReact.cloneElement(
-          <h1 />,
-          ~props={"data-testid": "h1-heading"},
-          [|ReasonReact.string("Heading")|]
-        )
-      )
-    </div>
+  let element =
+    <div style={ReactDOMRe.Style.make(~color="rebeccapurple", ())}>
+      {ReasonReact.cloneElement(
+         <h1 />,
+         ~props={"data-testid": "h1-heading"},
+         [|ReasonReact.string("Heading")|],
+       )}
+    </div>;
+
+  test("render works", () =>
+    element |> render |> expect |> toMatchSnapshot
   );
 
-  test("render works", () => {
-    element
+  // ByLabelText
+  describe("ByLabelText", () => {
+    let labelText =
+      <div>
+        <label htmlFor="username-input"> {React.string("Username")} </label>
+        <input id="username-input" />
+      </div>;
+
+    test("getByLabelText works", () =>
+      labelText
       |> render
+      |> getByLabelText(~matcher=`Str("Username"))
       |> expect
-      |> toMatchSnapshot;
+      |> toMatchSnapshot
+    );
   });
 
-  test("getByTestId works", () => {
-    element
+  // ByPlaceholderText
+  describe("ByPlaceholderText", () => {
+    let placeholderText =
+      <div>
+        <input placeholder="Username" />
+        <input placeholder="Password" />
+      </div>;
+
+    test("getByPlaceholderText works", () =>
+      placeholderText
       |> render
-      |> getByTestId("h1-heading")
+      |> getByPlaceholderText(~matcher=`Str("Username"))
       |> expect
-      |> toMatchSnapshot;
+      |> toMatchSnapshot
+    );
+  });
+
+  // ByText
+  describe("ByText", () => {
+    let text =
+      <div> <a href="/about"> {React.string({j|About ℹ️|j})} </a> </div>;
+
+    test("getByText works", () =>
+      text
+      |> render
+      |> getByText(~matcher=`Str({j|About ℹ️|j}))
+      |> expect
+      |> toMatchSnapshot
+    );
+  });
+
+  // ByAltText
+  describe("ByAltText", () => {
+    let altText =
+      <div>
+        <img alt="Incredibles 1 Poster" src="/incredibles-1.png" />
+        <img alt="Incredibles 2 Poster" src="/incredibles-2.png" />
+      </div>;
+
+    test("getByAltText works", () =>
+      altText
+      |> render
+      |> getByAltText(~matcher=`Str("Incredibles 2 Poster"))
+      |> expect
+      |> toMatchSnapshot
+    );
+  });
+
+  // ByTitle
+  describe("ByTitle", () => {
+    let title =
+      <div>
+        <span title="Delete" id="2" />
+        <svg>
+          <title> {React.string("Close")} </title>
+          <g> <path /> </g>
+        </svg>
+      </div>;
+
+    test("getByTitle works", () =>
+      title
+      |> render
+      |> getByTitle(~matcher=`Str("Delete"))
+      |> expect
+      |> toMatchSnapshot
+    );
+  });
+
+  // ByDisplayValue
+  describe("ByDisplayValue", () => {
+    let title =
+      <div>
+        <input type_="text" id="lastName" defaultValue="ReasonML" />
+      </div>;
+
+    test("getByDisplayValue works", () =>
+      title
+      |> render
+      |> getByDisplayValue(~matcher=`Str("ReasonML"))
+      |> expect
+      |> toMatchSnapshot
+    );
+  });
+
+  // ByRole
+  describe("ByRole", () => {
+    let role =
+      <div role="dialog">
+        <img ariaLabel="fancy image" src="fancy.jpg" />
+        <button> {React.string("Close dialog")} </button>
+      </div>;
+
+    test("getByRole works", () =>
+      role
+      |> render
+      |> getByRole(~matcher=`Str("button"))
+      |> expect
+      |> toMatchSnapshot
+    );
+  });
+
+  // ByTestId
+  describe("ByTestId", () => {
+    let _ = ();
+
+    test("getByTestId works", () =>
+      element
+      |> render
+      |> getByTestId(~matcher=`Str("h1-heading"))
+      |> expect
+      |> toMatchSnapshot
+    );
   });
 
   describe("debug", () => {
     beforeEach(() => {
-      [%raw {|jest.spyOn(console, 'log').mockImplementation(() => {})|}];
+      let _ = [%raw
+        {|jest.spyOn(console, 'log').mockImplementation(() => {})|}
+      ];
+      ();
     });
 
     afterEach(() => {
-      [%raw {|console.log.mockRestore()|}];
+      let _ = [%raw {|console.log.mockRestore()|}];
+      ();
     });
 
     test("works", () => {
       let _ = element |> render |> debug();
 
       let _ = [%raw {|expect(console.log).toHaveBeenCalledTimes(1)|}];
-      let _ = [%raw {|
+      let _ = [%raw
+        {|
         expect(console.log).toHaveBeenCalledWith(
           expect.stringContaining('Heading')
         )
-      |}];
+      |}
+      ];
 
       pass;
     });
@@ -83,11 +208,13 @@ describe("ReactTestingLibrary", () => {
       let _ = result |> debug(~el, ());
 
       let _ = [%raw {|expect(console.log).toHaveBeenCalledTimes(1)|}];
-      let _ = [%raw {|
+      let _ = [%raw
+        {|
         expect(console.log).toHaveBeenCalledWith(
           expect.stringContaining('Heading')
         )
-      |}];
+      |}
+      ];
 
       pass;
     });
@@ -99,11 +226,13 @@ describe("ReactTestingLibrary", () => {
       let _ = result |> debug(~el, ~maxLengthToPrint=10, ());
 
       let _ = [%raw {|expect(console.log).toHaveBeenCalledTimes(1)|}];
-      let _ = [%raw {|
+      let _ = [%raw
+        {|
         expect(console.log).toHaveBeenCalledWith(
           expect.stringContaining('<div>...')
         )
-      |}];
+      |}
+      ];
 
       pass;
     });
@@ -113,11 +242,11 @@ describe("ReactTestingLibrary", () => {
     let result = render(<Greeting message="hi" />);
     let check = text =>
       result
-        |> container
-        |> firstChild
-        |> innerHTML
-        |> expect
-        |> toEqual(text);
+      |> container
+      |> firstChild
+      |> innerHTML
+      |> expect
+      |> toEqual(text);
 
     check("hi") |> ignore;
 
@@ -126,11 +255,7 @@ describe("ReactTestingLibrary", () => {
     check("hey");
   });
 
-  test("asFragment works", () => {
-    element
-      |> render
-      |> asFragment()
-      |> expect
-      |> toMatchSnapshot;
-  });
+  test("asFragment works", () =>
+    element |> render |> asFragment() |> expect |> toMatchSnapshot
+  );
 });

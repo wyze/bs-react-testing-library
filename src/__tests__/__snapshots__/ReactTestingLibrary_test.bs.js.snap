@@ -1,5 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ReactTestingLibrary ByAltText getByAltText works 1`] = `
+<img
+  alt="Incredibles 2 Poster"
+  src="/incredibles-2.png"
+/>
+`;
+
+exports[`ReactTestingLibrary ByDisplayValue getByDisplayValue works 1`] = `
+<input
+  id="lastName"
+  type="text"
+  value="ReasonML"
+/>
+`;
+
+exports[`ReactTestingLibrary ByLabelText getByLabelText works 1`] = `
+<input
+  id="username-input"
+/>
+`;
+
+exports[`ReactTestingLibrary ByPlaceholderText getByPlaceholderText works 1`] = `
+<input
+  placeholder="Username"
+/>
+`;
+
+exports[`ReactTestingLibrary ByRole getByRole works 1`] = `
+<button>
+  Close dialog
+</button>
+`;
+
+exports[`ReactTestingLibrary ByTestId getByTestId works 1`] = `
+<h1
+  data-testid="h1-heading"
+>
+  Heading
+</h1>
+`;
+
+exports[`ReactTestingLibrary ByText getByText works 1`] = `
+<a
+  href="/about"
+>
+  About ℹ️
+</a>
+`;
+
+exports[`ReactTestingLibrary ByTitle getByTitle works 1`] = `
+<span
+  id="2"
+  title="Delete"
+/>
+`;
+
 exports[`ReactTestingLibrary asFragment works 1`] = `
 <DocumentFragment>
   <div>
@@ -10,14 +66,6 @@ exports[`ReactTestingLibrary asFragment works 1`] = `
     </h1>
   </div>
 </DocumentFragment>
-`;
-
-exports[`ReactTestingLibrary getByTestId works 1`] = `
-<h1
-  data-testid="h1-heading"
->
-  Heading
-</h1>
 `;
 
 exports[`ReactTestingLibrary render works 1`] = `
