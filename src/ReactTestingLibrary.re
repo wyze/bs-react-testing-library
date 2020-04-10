@@ -59,6 +59,106 @@ let getByLabelText = (~matcher, ~options=?, result) =>
     ~options=Js.Undefined.fromOption(options),
   );
 
+[@bs.send.pipe: renderResult]
+external _getAllByLabelText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByLabelTextQuery.options)
+  ) =>
+  array(Dom.element) =
+  "getAllByLabelText";
+
+let getAllByLabelText = (~matcher, ~options=?, result) =>
+  _getAllByLabelText(
+    result,
+    ~matcher,
+    ~options=Js.Undefined.fromOption(options),
+  );
+
+[@bs.send.pipe: renderResult]
+external _queryByLabelText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByLabelTextQuery.options)
+  ) =>
+  Js.null(Dom.element) =
+  "queryByLabelText";
+
+let queryByLabelText = (~matcher, ~options=?, result) =>
+  _queryByLabelText(
+    result,
+    ~matcher,
+    ~options=Js.Undefined.fromOption(options),
+  );
+
+[@bs.send.pipe: renderResult]
+external _queryAllByLabelText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByLabelTextQuery.options)
+  ) =>
+  array(Dom.element) =
+  "queryAllByLabelText";
+
+let queryAllByLabelText = (~matcher, ~options=?, result) =>
+  _queryAllByLabelText(
+    result,
+    ~matcher,
+    ~options=Js.Undefined.fromOption(options),
+  );
+
+[@bs.send.pipe: renderResult]
+external _findByLabelText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByLabelTextQuery.options)
+  ) =>
+  Js.Promise.t(Dom.element) =
+  "findByLabelText";
+
+let findByLabelText = (~matcher, ~options=?, result) =>
+  _findByLabelText(
+    result,
+    ~matcher,
+    ~options=Js.Undefined.fromOption(options),
+  );
+
+[@bs.send.pipe: renderResult]
+external _findAllByLabelText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByLabelTextQuery.options)
+  ) =>
+  Js.Promise.t(array(Dom.element)) =
+  "findAllByLabelText";
+
+let findAllByLabelText = (~matcher, ~options=?, result) =>
+  _findAllByLabelText(
+    result,
+    ~matcher,
+    ~options=Js.Undefined.fromOption(options),
+  );
+
 // ByPlaceholderText
 [@bs.send.pipe: renderResult]
 external _getByPlaceholderText:

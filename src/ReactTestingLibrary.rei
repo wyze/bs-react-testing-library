@@ -108,6 +108,66 @@ let getByLabelText:
   ) =>
   Dom.element;
 
+let getAllByLabelText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.ByLabelTextQuery.options=?,
+    renderResult
+  ) =>
+  array(Dom.element);
+
+let queryByLabelText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.ByLabelTextQuery.options=?,
+    renderResult
+  ) =>
+  Js.null(Dom.element);
+
+let queryAllByLabelText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.ByLabelTextQuery.options=?,
+    renderResult
+  ) =>
+  array(Dom.element);
+
+let findByLabelText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.ByLabelTextQuery.options=?,
+    renderResult
+  ) =>
+  Js.Promise.t(Dom.element);
+
+let findAllByLabelText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.ByLabelTextQuery.options=?,
+    renderResult
+  ) =>
+  Js.Promise.t(array(Dom.element));
+
 // ByPlaceholderText
 let getByPlaceholderText:
   (

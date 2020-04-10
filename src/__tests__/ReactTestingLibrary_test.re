@@ -57,6 +57,56 @@ describe("ReactTestingLibrary", () => {
       |> expect
       |> toMatchSnapshot
     );
+
+    test("getAllByLabelText works", () =>
+      labelText
+      |> render
+      |> getAllByLabelText(~matcher=`Str("Username"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByLabelText works", () =>
+      labelText
+      |> render
+      |> queryByLabelText(~matcher=`Str("Username"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByLabelText works (element not found)", () =>
+      labelText
+      |> render
+      |> queryByLabelText(~matcher=`Str("!@#$Username!@#$"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryAllByLabelText works", () =>
+      labelText
+      |> render
+      |> queryAllByLabelText(~matcher=`Str("Username"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    testPromise("findByLabelText works", () =>
+      labelText
+      |> render
+      |> findByLabelText(~matcher=`Str("Username"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
+    );
+
+    testPromise("findAllByLabelText works", () =>
+      labelText
+      |> render
+      |> findAllByLabelText(~matcher=`Str("Username"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
+    );
   });
 
   // ByPlaceholderText
