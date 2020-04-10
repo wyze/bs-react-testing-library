@@ -188,6 +188,56 @@ describe("ReactTestingLibrary", () => {
       |> expect
       |> toMatchSnapshot
     );
+
+    test("getAllByText works", () =>
+      text
+      |> render
+      |> getAllByText(~matcher=`Str({j|About ℹ️|j}))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByText works", () =>
+      text
+      |> render
+      |> queryByText(~matcher=`Str({j|About ℹ️|j}))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByText works (element not found)", () =>
+      text
+      |> render
+      |> queryByText(~matcher=`Str({j|!@#About ℹ️!@#|j}))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryAllByText works", () =>
+      text
+      |> render
+      |> queryAllByText(~matcher=`Str({j|About ℹ️|j}))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    testPromise("findByText works", () =>
+      text
+      |> render
+      |> findByText(~matcher=`Str({j|About ℹ️|j}))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
+    );
+
+    testPromise("findAllByText works", () =>
+      text
+      |> render
+      |> findAllByText(~matcher=`Str({j|About ℹ️|j}))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
+    );
   });
 
   // ByAltText
@@ -204,6 +254,56 @@ describe("ReactTestingLibrary", () => {
       |> getByAltText(~matcher=`Str("Incredibles 2 Poster"))
       |> expect
       |> toMatchSnapshot
+    );
+
+    test("getAllByAltText works", () =>
+      altText
+      |> render
+      |> getAllByAltText(~matcher=`Str("Incredibles 2 Poster"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByAltText works", () =>
+      altText
+      |> render
+      |> queryByAltText(~matcher=`Str("Incredibles 2 Poster"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByAltText works (element not found)", () =>
+      altText
+      |> render
+      |> queryByAltText(~matcher=`Str("!@#$Incredibles 2 Poster!@#$"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryAllByAltText works", () =>
+      altText
+      |> render
+      |> queryAllByAltText(~matcher=`Str("Incredibles 2 Poster"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    testPromise("findByAltText works", () =>
+      altText
+      |> render
+      |> findByAltText(~matcher=`Str("Incredibles 2 Poster"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
+    );
+
+    testPromise("findAllByAltText works", () =>
+      altText
+      |> render
+      |> findAllByAltText(~matcher=`Str("Incredibles 2 Poster"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
     );
   });
 
@@ -225,6 +325,56 @@ describe("ReactTestingLibrary", () => {
       |> expect
       |> toMatchSnapshot
     );
+
+    test("getAllByTitle works", () =>
+      title
+      |> render
+      |> getAllByTitle(~matcher=`Str("Delete"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByTitle works", () =>
+      title
+      |> render
+      |> queryByTitle(~matcher=`Str("Delete"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByTitle works (element not found)", () =>
+      title
+      |> render
+      |> queryByTitle(~matcher=`Str("!@#$Delete!@#$"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryAllByTitle works", () =>
+      title
+      |> render
+      |> queryAllByTitle(~matcher=`Str("Delete"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    testPromise("findByTitle works", () =>
+      title
+      |> render
+      |> findByTitle(~matcher=`Str("Delete"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
+    );
+
+    testPromise("findAllByTitle works", () =>
+      title
+      |> render
+      |> findAllByTitle(~matcher=`Str("Delete"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
+    );
   });
 
   // ByDisplayValue
@@ -240,6 +390,56 @@ describe("ReactTestingLibrary", () => {
       |> getByDisplayValue(~matcher=`Str("ReasonML"))
       |> expect
       |> toMatchSnapshot
+    );
+
+    test("getAllByDisplayValue works", () =>
+      title
+      |> render
+      |> getAllByDisplayValue(~matcher=`Str("ReasonML"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByDisplayValue works", () =>
+      title
+      |> render
+      |> queryByDisplayValue(~matcher=`Str("ReasonML"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByDisplayValue works (element not found)", () =>
+      title
+      |> render
+      |> queryByDisplayValue(~matcher=`Str("!@#$ReasonML!@#$"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryAllByDisplayValue works", () =>
+      title
+      |> render
+      |> queryAllByDisplayValue(~matcher=`Str("ReasonML"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    testPromise("findByDisplayValue works", () =>
+      title
+      |> render
+      |> findByDisplayValue(~matcher=`Str("ReasonML"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
+    );
+
+    testPromise("findAllByDisplayValue works", () =>
+      title
+      |> render
+      |> findAllByDisplayValue(~matcher=`Str("ReasonML"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
     );
   });
 
@@ -258,18 +458,116 @@ describe("ReactTestingLibrary", () => {
       |> expect
       |> toMatchSnapshot
     );
+
+    test("getAllByRole works", () =>
+      role
+      |> render
+      |> getAllByRole(~matcher=`Str("button"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByRole works", () =>
+      role
+      |> render
+      |> queryByRole(~matcher=`Str("button"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByRole works (element not found)", () =>
+      role
+      |> render
+      |> queryByRole(~matcher=`Str("!@#$button!@#$"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryAllByRole works", () =>
+      role
+      |> render
+      |> queryAllByRole(~matcher=`Str("button"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    testPromise("findByRole works", () =>
+      role
+      |> render
+      |> findByRole(~matcher=`Str("button"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
+    );
+
+    testPromise("findAllByRole works", () =>
+      role
+      |> render
+      |> findAllByRole(~matcher=`Str("button"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
+    );
   });
 
   // ByTestId
   describe("ByTestId", () => {
-    let _ = ();
-
     test("getByTestId works", () =>
       element
       |> render
       |> getByTestId(~matcher=`Str("h1-heading"))
       |> expect
       |> toMatchSnapshot
+    );
+
+    test("getAllByTestId works", () =>
+      element
+      |> render
+      |> getAllByTestId(~matcher=`Str("h1-heading"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByTestId works", () =>
+      element
+      |> render
+      |> queryByTestId(~matcher=`Str("h1-heading"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByTestId works (element not found)", () =>
+      element
+      |> render
+      |> queryByTestId(~matcher=`Str("!@#$h1-heading!@#$"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryAllByTestId works", () =>
+      element
+      |> render
+      |> queryAllByTestId(~matcher=`Str("h1-heading"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    testPromise("findByTestId works", () =>
+      element
+      |> render
+      |> findByTestId(~matcher=`Str("h1-heading"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
+    );
+
+    testPromise("findAllByTestId works", () =>
+      element
+      |> render
+      |> findAllByTestId(~matcher=`Str("h1-heading"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
     );
   });
 
