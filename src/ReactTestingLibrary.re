@@ -123,7 +123,7 @@ external _getByTitle:
                 | `RegExp(Js.Re.t)
                 | `Func((string, Dom.element) => bool)
               ],
-    ~options: Js.undefined(DomTestingLibrary.ByTitleQuery.options)
+    ~options: Js.undefined(ByTitleQuery.options)
   ) =>
   Dom.element =
   "getByTitle";
@@ -140,7 +140,7 @@ external _getByDisplayValue:
                 | `RegExp(Js.Re.t)
                 | `Func((string, Dom.element) => bool)
               ],
-    ~options: Js.undefined(DomTestingLibrary.ByDisplayValueQuery.options)
+    ~options: Js.undefined(ByDisplayValueQuery.options)
   ) =>
   Dom.element =
   "getByDisplayValue";
@@ -161,7 +161,7 @@ external _getByRole:
                 | `RegExp(Js.Re.t)
                 | `Func((string, Dom.element) => bool)
               ],
-    ~options: Js.undefined(DomTestingLibrary.ByRoleQuery.options)
+    ~options: Js.undefined(ByRoleQuery.options)
   ) =>
   Dom.element =
   "getByRole";
@@ -178,7 +178,7 @@ external _getByTestId:
                 | `RegExp(Js.Re.t)
                 | `Func((string, Dom.element) => bool)
               ],
-    ~options: Js.undefined(DomTestingLibrary.ByTestIdQuery.options)
+    ~options: Js.undefined(ByTestIdQuery.options)
   ) =>
   Dom.element =
   "getByTestId";
