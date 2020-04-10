@@ -19,7 +19,7 @@
     "clean": "run-p clean:*",
     "clean:bsb": "bsb -clean-world",
     "clean:project": "rimraf lib .merlin",
-    "jest": "jest",
+    "jest": "jest  --setupTestFrameworkScriptFile=./setupTests.js",
     "postversion": "github-release",
     "prebuild": "yarn clean",
     "pretest": "yarn build",
@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.4.8",
+    "@sheerun/mutationobserver-shim": "^0.3.3",
     "@wyze/changelog": "^1.0.0",
     "@wyze/github-release": "^1.0.0",
     "bs-platform": "^5.0.6",
