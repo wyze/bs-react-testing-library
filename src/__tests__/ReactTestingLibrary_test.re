@@ -124,6 +124,56 @@ describe("ReactTestingLibrary", () => {
       |> expect
       |> toMatchSnapshot
     );
+
+    test("getAllByPlaceholderText works", () =>
+      placeholderText
+      |> render
+      |> getAllByPlaceholderText(~matcher=`Str("Username"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByPlaceholderText works", () =>
+      placeholderText
+      |> render
+      |> queryByPlaceholderText(~matcher=`Str("Username"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryByPlaceholderText works (element not found)", () =>
+      placeholderText
+      |> render
+      |> queryByPlaceholderText(~matcher=`Str("!@#$Username!@#$"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    test("queryAllByPlaceholderText works", () =>
+      placeholderText
+      |> render
+      |> queryAllByPlaceholderText(~matcher=`Str("Username"))
+      |> expect
+      |> toMatchSnapshot
+    );
+
+    testPromise("findByPlaceholderText works", () =>
+      placeholderText
+      |> render
+      |> findByPlaceholderText(~matcher=`Str("Username"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
+    );
+
+    testPromise("findAllByPlaceholderText works", () =>
+      placeholderText
+      |> render
+      |> findAllByPlaceholderText(~matcher=`Str("Username"))
+      |> Js.Promise.then_(result =>
+           result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+         )
+    );
   });
 
   // ByText

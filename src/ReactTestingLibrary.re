@@ -180,6 +180,106 @@ let getByPlaceholderText = (~matcher, ~options=?, result) =>
     ~options=Js.Undefined.fromOption(options),
   );
 
+[@bs.send.pipe: renderResult]
+external _getAllByPlaceholderText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByPlaceholderTextQuery.options)
+  ) =>
+  array(Dom.element) =
+  "getAllByPlaceholderText";
+
+let getAllByPlaceholderText = (~matcher, ~options=?, result) =>
+  _getAllByPlaceholderText(
+    result,
+    ~matcher,
+    ~options=Js.Undefined.fromOption(options),
+  );
+
+[@bs.send.pipe: renderResult]
+external _queryByPlaceholderText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByPlaceholderTextQuery.options)
+  ) =>
+  Js.null(Dom.element) =
+  "queryByPlaceholderText";
+
+let queryByPlaceholderText = (~matcher, ~options=?, result) =>
+  _queryByPlaceholderText(
+    result,
+    ~matcher,
+    ~options=Js.Undefined.fromOption(options),
+  );
+
+[@bs.send.pipe: renderResult]
+external _queryAllByPlaceholderText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByPlaceholderTextQuery.options)
+  ) =>
+  array(Dom.element) =
+  "queryAllByPlaceholderText";
+
+let queryAllByPlaceholderText = (~matcher, ~options=?, result) =>
+  _queryAllByPlaceholderText(
+    result,
+    ~matcher,
+    ~options=Js.Undefined.fromOption(options),
+  );
+
+[@bs.send.pipe: renderResult]
+external _findByPlaceholderText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByPlaceholderTextQuery.options)
+  ) =>
+  Js.Promise.t(Dom.element) =
+  "findByPlaceholderText";
+
+let findByPlaceholderText = (~matcher, ~options=?, result) =>
+  _findByPlaceholderText(
+    result,
+    ~matcher,
+    ~options=Js.Undefined.fromOption(options),
+  );
+
+[@bs.send.pipe: renderResult]
+external _findAllByPlaceholderText:
+  (
+    ~matcher: [@bs.unwrap] [
+                | `Str(string)
+                | `RegExp(Js.Re.t)
+                | `Func((string, Dom.element) => bool)
+              ],
+    ~options: Js.undefined(ByPlaceholderTextQuery.options)
+  ) =>
+  Js.Promise.t(array(Dom.element)) =
+  "findAllByPlaceholderText";
+
+let findAllByPlaceholderText = (~matcher, ~options=?, result) =>
+  _findAllByPlaceholderText(
+    result,
+    ~matcher,
+    ~options=Js.Undefined.fromOption(options),
+  );
+
 // ByText
 [@bs.send.pipe: renderResult]
 external _getByText:

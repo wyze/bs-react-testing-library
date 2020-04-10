@@ -181,6 +181,66 @@ let getByPlaceholderText:
   ) =>
   Dom.element;
 
+let getAllByPlaceholderText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.ByPlaceholderTextQuery.options=?,
+    renderResult
+  ) =>
+  array(Dom.element);
+
+let queryByPlaceholderText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.ByPlaceholderTextQuery.options=?,
+    renderResult
+  ) =>
+  Js.null(Dom.element);
+
+let queryAllByPlaceholderText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.ByPlaceholderTextQuery.options=?,
+    renderResult
+  ) =>
+  array(Dom.element);
+
+let findByPlaceholderText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.ByPlaceholderTextQuery.options=?,
+    renderResult
+  ) =>
+  Js.Promise.t(Dom.element);
+
+let findAllByPlaceholderText:
+  (
+    ~matcher: [
+                | `Func((string, Dom.element) => bool)
+                | `RegExp(Js.Re.t)
+                | `Str(string)
+              ],
+    ~options: DomTestingLibrary.ByPlaceholderTextQuery.options=?,
+    renderResult
+  ) =>
+  Js.Promise.t(array(Dom.element));
+
 // ByText
 let getByText:
   (

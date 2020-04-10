@@ -59,7 +59,45 @@ exports[`ReactTestingLibrary ByLabelText queryByLabelText works 1`] = `
 />
 `;
 
+exports[`ReactTestingLibrary ByPlaceholderText findAllByPlaceholderText works 1`] = `
+Array [
+  <input
+    placeholder="Username"
+  />,
+]
+`;
+
+exports[`ReactTestingLibrary ByPlaceholderText findByPlaceholderText works 1`] = `
+<input
+  placeholder="Username"
+/>
+`;
+
+exports[`ReactTestingLibrary ByPlaceholderText getAllByPlaceholderText works 1`] = `
+Array [
+  <input
+    placeholder="Username"
+  />,
+]
+`;
+
 exports[`ReactTestingLibrary ByPlaceholderText getByPlaceholderText works 1`] = `
+<input
+  placeholder="Username"
+/>
+`;
+
+exports[`ReactTestingLibrary ByPlaceholderText queryAllByPlaceholderText works 1`] = `
+Array [
+  <input
+    placeholder="Username"
+  />,
+]
+`;
+
+exports[`ReactTestingLibrary ByPlaceholderText queryByPlaceholderText works (element not found) 1`] = `null`;
+
+exports[`ReactTestingLibrary ByPlaceholderText queryByPlaceholderText works 1`] = `
 <input
   placeholder="Username"
 />
