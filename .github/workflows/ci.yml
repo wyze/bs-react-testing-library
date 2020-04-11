@@ -17,6 +17,6 @@ jobs:
       - run: yarn install --frozen-lockfile --check-files
       - run: yarn test --coverage
       - name: Upload coverage to Coveralls
-        uses: coverallsapp/github-action@v1.0.1
+        uses: eyal0/github-action@correct_sha
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
