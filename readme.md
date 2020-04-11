@@ -1,4 +1,4 @@
-# bs-react-testing-library &middot; [![Build Status][circleci-image]][circleci-url] [![npm][npm-image]][npm-url] [![Coveralls][coveralls-image]][coveralls-url]
+# bs-react-testing-library &middot; [![Build Status][actions-image]][actions-url] [![npm][npm-image]][npm-url] [![Coveralls][coveralls-image]][coveralls-url]
 
 > [BuckleScript](//github.com/BuckleScript/bucklescript) bindings for [react-testing-library](//github.com/kentcdodds/react-testing-library).
 
@@ -87,8 +87,8 @@ $ yarn test
 
 MIT © [Neil Kistner](https://neilkistner.com)
 
-[circleci-image]: https://img.shields.io/circleci/project/github/wyze/bs-react-testing-library.svg?style=flat-square
-[circleci-url]: https://circleci.com/gh/wyze/bs-react-testing-library
+[actions-image]: https://img.shields.io/github/workflow/status/wyze/bs-react-testing-library/CI.svg?style=flat-square
+[actions-url]: https://github.com/wyze/bs-react-testing-library/actions
 
 [npm-image]: https://img.shields.io/npm/v/bs-react-testing-library.svg?style=flat-square
 [npm-url]: https://npm.im/bs-react-testing-library
