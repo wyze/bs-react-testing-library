@@ -400,6 +400,18 @@ exports[`ReactTestingLibrary ByTitle queryByTitle works 1`] = `
 />
 `;
 
+exports[`ReactTestingLibrary act works 1`] = `
+<div>
+  Count: 1
+  <button>
+    +
+  </button>
+  <button>
+    -
+  </button>
+</div>
+`;
+
 exports[`ReactTestingLibrary asFragment works 1`] = `
 <DocumentFragment>
   <div>

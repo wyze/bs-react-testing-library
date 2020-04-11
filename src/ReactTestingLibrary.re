@@ -19,6 +19,17 @@ type renderOptions = {
 external cleanup: unit => unit = "cleanup";
 
 [@bs.module "@testing-library/react"]
+external _act: (unit => Js.undefined(Js.Promise.t('a))) => unit = "act";
+
+let act = callback =>
+  _act(() => {
+    callback();
+    // (work-around) BuckleScript compiles `unit` to `0`, this will cause a warning as following:
+    // Warning: The callback passed to act(...) function must return undefined, or a Promise.
+    Js.Undefined.empty;
+  });
+
+[@bs.module "@testing-library/react"]
 external _render: (ReasonReact.reactElement, renderOptions) => renderResult =
   "render";
 
