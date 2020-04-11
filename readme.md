@@ -76,11 +76,12 @@ $ yarn test
 
 > [Full Change Log](changelog.md)
 
-### [v0.6.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.6.0) (2019-07-21)
+### [v0.7.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.7.0) (2020-04-10)
 
-* Upgrade `extend` to fix CVE-2018-16492 ([@wyze](https://github.com/wyze) in [535d526](https://github.com/wyze/bs-react-testing-library/commit/535d526))
-* Upgrade dependencies ([@wyze](https://github.com/wyze) in [5a73fe3](https://github.com/wyze/bs-react-testing-library/commit/5a73fe3))
-* Upgrade react-testing-library to v8 ([@jihchi](https://github.com/jihchi) in [#5](https://github.com/wyze/bs-react-testing-library/pull/5))
+* Fix linguist to map files to Reason ([@wyze](https://github.com/wyze) in [ef9fb26](https://github.com/wyze/bs-react-testing-library/commit/ef9fb26))
+* Upgrade devDependencies to latest versions ([@wyze](https://github.com/wyze) in [b4705a9](https://github.com/wyze/bs-react-testing-library/commit/b4705a9))
+* Upgrade underlaying library ([@jihchi](https://github.com/jihchi) in [#13](https://github.com/wyze/bs-react-testing-library/pull/13))
+* Remove warnings for implicit external names ([@justinba1010](https://github.com/justinba1010) in [#9](https://github.com/wyze/bs-react-testing-library/pull/9))
 
 ## License
 
