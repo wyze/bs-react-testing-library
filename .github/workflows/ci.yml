@@ -16,7 +16,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn install --frozen-lockfile --check-files
       - run: yarn test:coverage
-      - run: npx bisect-ppx-report send-to Coveralls
+      - run: yarn bisect-ppx-report send-to Coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PULL_REQUEST_NUMBER: ${{ github.event.number }}
