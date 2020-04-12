@@ -1,5 +1,10 @@
 ## Change Log
 
+### [v0.7.1](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.7.1) (2020-04-12)
+
+* Add support for `act` helper function ([@jihchi](https://github.com/jihchi) in [#17](https://github.com/wyze/bs-react-testing-library/pull/17))
+* Switch to GitHub actions ([@wyze](https://github.com/wyze) in [#18](https://github.com/wyze/bs-react-testing-library/pull/18))
+
 ### [v0.7.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.7.0) (2020-04-10)
 
 * Fix linguist to map files to Reason ([@wyze](https://github.com/wyze) in [ef9fb26](https://github.com/wyze/bs-react-testing-library/commit/ef9fb26))

@@ -76,12 +76,10 @@ $ yarn test
 
 > [Full Change Log](changelog.md)
 
-### [v0.7.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.7.0) (2020-04-10)
+### [v0.7.1](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.7.1) (2020-04-12)
 
-* Fix linguist to map files to Reason ([@wyze](https://github.com/wyze) in [ef9fb26](https://github.com/wyze/bs-react-testing-library/commit/ef9fb26))
-* Upgrade devDependencies to latest versions ([@wyze](https://github.com/wyze) in [b4705a9](https://github.com/wyze/bs-react-testing-library/commit/b4705a9))
-* Upgrade underlaying library ([@jihchi](https://github.com/jihchi) in [#13](https://github.com/wyze/bs-react-testing-library/pull/13))
-* Remove warnings for implicit external names ([@justinba1010](https://github.com/justinba1010) in [#9](https://github.com/wyze/bs-react-testing-library/pull/9))
+* Add support for `act` helper function ([@jihchi](https://github.com/jihchi) in [#17](https://github.com/wyze/bs-react-testing-library/pull/17))
+* Switch to GitHub actions ([@wyze](https://github.com/wyze) in [#18](https://github.com/wyze/bs-react-testing-library/pull/18))
 
 ## License
 
