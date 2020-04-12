@@ -17,7 +17,4 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn --check-files
       - run: yarn test:coverage
-      - run: yarn bisect-ppx-report send-to Coveralls
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PULL_REQUEST_NUMBER: ${{ github.event.number }}
+      - run: yarn bisect-ppx-report send-to Codecov

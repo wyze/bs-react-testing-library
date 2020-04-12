@@ -1,4 +1,4 @@
-# bs-react-testing-library &middot; [![Build Status][actions-image]][actions-url] [![npm][npm-image]][npm-url] [![Coveralls][coveralls-image]][coveralls-url]
+# bs-react-testing-library &middot; [![Build Status][actions-image]][actions-url] [![npm][npm-image]][npm-url] [![Codecov][codecov-image]][codecov-url]
 
 > [BuckleScript](//github.com/BuckleScript/bucklescript) bindings for [react-testing-library](//github.com/kentcdodds/react-testing-library).
 
@@ -93,5 +93,5 @@ MIT © [Neil Kistner](https://neilkistner.com)
 [npm-image]: https://img.shields.io/npm/v/bs-react-testing-library.svg?style=flat-square
 [npm-url]: https://npm.im/bs-react-testing-library
 
-[coveralls-image]: https://img.shields.io/coveralls/github/wyze/bs-react-testing-library.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/github/wyze/bs-react-testing-library
+[codecov-image]: https://img.shields.io/codecov/c/github/wyze/bs-react-testing-library.svg?style=flat-square
+[codecov-url]: https://codecov.io/github/wyze/bs-react-testing-library
