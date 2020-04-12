@@ -14,28 +14,26 @@ module Counter = {
     | Inc
     | Dec;
 
-  let component = ReasonReact.reducerComponent(__MODULE__);
-
-  let make = _children => {
-    ...component,
-    initialState: () => 0,
-    reducer: (action, state) =>
-      ReasonReact.Update(
+  [@react.component]
+  let make = () => {
+    let (state, dispatch) = React.useReducer(
+      (state, action) =>
         switch (action) {
         | Inc => state + 1
         | Dec => state - 1
         },
-      ),
-    render: self =>
-      <div>
-        {ReasonReact.string("Count: " ++ string_of_int(self.state))}
-        <button onClick={_event => self.send(Inc)}>
-          {ReasonReact.string("+")}
-        </button>
-        <button onClick={_event => self.send(Dec)}>
-          {ReasonReact.string("-")}
-        </button>
-      </div>,
+      0
+    );
+
+    <div>
+      {ReasonReact.string("Count: " ++ string_of_int(state))}
+      <button onClick={_event => dispatch(Inc)}>
+        {ReasonReact.string("+")}
+      </button>
+      <button onClick={_event => dispatch(Dec)}>
+        {ReasonReact.string("-")}
+      </button>
+    </div>
   };
 };
 
