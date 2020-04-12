@@ -4,6 +4,9 @@
     "-bs-no-version-header",
     "-bs-super-errors"
   ],
+  "ppx-flags":[
+    "bisect_ppx/ppx"
+  ],
   "warnings": {
     "number": "+A-48-42",
     "error": "+A-3-44-102"
@@ -18,6 +21,7 @@
   },
   "suffix": ".bs.js",
   "bs-dependencies": [
+    "bisect_ppx",
     "bs-dom-testing-library",
     "reason-react"
   ],

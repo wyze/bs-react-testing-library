@@ -2,11 +2,12 @@
 node_modules
 
 # Build
-coverage
+_coverage
 src/**/*.bs.js
 lib
 .bsb.lock
 .merlin
+*.coverage
 
 # Logs
 *.log
