@@ -414,7 +414,9 @@ exports[`ReactTestingLibrary act works 1`] = `
 
 exports[`ReactTestingLibrary asFragment works 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    style="color: rebeccapurple;"
+  >
     <h1
       data-testid="h1-heading"
     >
@@ -429,7 +431,9 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
+      <div
+        style="color: rebeccapurple;"
+      >
         <h1
           data-testid="h1-heading"
         >
@@ -439,7 +443,9 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <div>
+    <div
+      style="color: rebeccapurple;"
+    >
       <h1
         data-testid="h1-heading"
       >

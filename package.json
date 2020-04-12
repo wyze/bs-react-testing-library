@@ -1,6 +1,6 @@
 {
   "name": "bs-react-testing-library",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "BuckleScript bindings for react-testing-library.",
   "repository": "wyze/bs-react-testing-library",
   "author": {
@@ -18,13 +18,14 @@
     "build": "bsb -make-world",
     "clean": "run-p clean:*",
     "clean:bsb": "bsb -clean-world",
-    "clean:project": "rimraf lib .merlin",
-    "jest": "jest  --setupTestFrameworkScriptFile=./setupTests.js",
+    "clean:project": "rimraf _coverage lib .merlin *.coverage",
+    "jest": "jest --setupTestFrameworkScriptFile=./setupTests.js",
     "postversion": "github-release",
     "prebuild": "yarn clean",
     "pretest": "yarn build",
     "preversion": "yarn build",
     "test": "yarn jest",
+    "test:coverage": "BISECT_ENABLE=yes yarn test",
     "version": "changelog"
   },
   "keywords": [
@@ -33,22 +34,23 @@
     "testing"
   ],
   "dependencies": {
-    "@testing-library/react": "^10.0.1",
+    "@testing-library/react": "^10.0.2",
     "bs-dom-testing-library": "^0.6.1"
   },
   "peerDependencies": {
     "reason-react": "< 0.8.0"
   },
   "devDependencies": {
-    "@glennsl/bs-jest": "^0.4.8",
+    "@glennsl/bs-jest": "^0.5.1",
     "@sheerun/mutationobserver-shim": "^0.3.3",
     "@wyze/changelog": "^1.0.0",
-    "@wyze/github-release": "^1.0.0",
-    "bs-platform": "^5.0.6",
+    "@wyze/github-release": "^1.1.1",
+    "bisect_ppx": "^2.3.0",
+    "bs-platform": "^7.2.2",
     "npm-run-all": "^4.1.5",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "reason-react": "^0.7.0",
-    "rimraf": "^2.6.3"
+    "rimraf": "^3.0.2"
   }
 }
