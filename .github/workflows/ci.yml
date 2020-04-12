@@ -14,7 +14,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn install --frozen-lockfile --check-files
+      - run: yarn install --frozen-lockfile
+      - run: yarn --check-files
       - run: yarn test:coverage
       - run: yarn bisect-ppx-report send-to Coveralls
         env:
