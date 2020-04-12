@@ -1,4 +1,8 @@
+[@coverage exclude_file];
+
 open Jest;
+
+afterAll(Bisect.Runtime.write_coverage_data);
 
 module Greeting = {
   [@react.component]

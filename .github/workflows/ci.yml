@@ -1,6 +1,6 @@
 name: CI
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install --frozen-lockfile --check-files
-      - run: yarn test --coverage
-      - name: Upload coverage to Coveralls
-        uses: eyal0/github-action@correct_sha
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: yarn test:coverage
+      - run: bisect-ppx-report send-to Coveralls
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULL_REQUEST_NUMBER: ${{ github.event.number }}

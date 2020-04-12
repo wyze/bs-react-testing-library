@@ -1084,6 +1084,11 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+bisect_ppx@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/bisect_ppx/-/bisect_ppx-2.3.0.tgz#349379b8d5749516939f190c1a8c30cb1c25f67d"
+  integrity sha512-La8XdYpuRU4kBCD20qGbGmsdqpK3z46zi14negLwJ3zInoUK2VNXJaTM+M2lPOomZNdnNcspY+3vIGbV7auR/A==
+
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
