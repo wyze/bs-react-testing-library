@@ -86,6 +86,8 @@ type renderOptions = {
 [@bs.module "@testing-library/react"]
 external cleanup: unit => unit = "cleanup";
 
+let act: (unit => unit) => unit;
+
 [@bs.get] external container: renderResult => Dom.element = "container";
 
 [@bs.get] external baseElement: renderResult => Dom.element = "baseElement";

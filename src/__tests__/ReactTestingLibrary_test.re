@@ -9,6 +9,34 @@ module Greeting = {
   let make = (~message) => <div> {ReasonReact.string(message)} </div>;
 };
 
+module Counter = {
+  type action =
+    | Inc
+    | Dec;
+
+  [@react.component]
+  let make = () => {
+    let (state, dispatch) = React.useReducer(
+      (state, action) =>
+        switch (action) {
+        | Inc => state + 1
+        | Dec => state - 1
+        },
+      0
+    );
+
+    <div>
+      {ReasonReact.string("Count: " ++ string_of_int(state))}
+      <button onClick={_event => dispatch(Inc)}>
+        {ReasonReact.string("+")}
+      </button>
+      <button onClick={_event => dispatch(Dec)}>
+        {ReasonReact.string("-")}
+      </button>
+    </div>
+  };
+};
+
 external unsafeAsElement: Dom.node => Dom.element = "%identity";
 [@bs.get] external firstChild: Dom.element => Dom.node = "firstChild";
 [@bs.get] external innerHTML: Dom.node => string = "innerHTML";
@@ -644,4 +672,17 @@ describe("ReactTestingLibrary", () => {
   test("asFragment works", () =>
     element |> render |> asFragment() |> expect |> toMatchSnapshot
   );
+
+  test("act works", () => {
+    let result = <Counter /> |> render;
+
+    act(() =>
+      result |> getByText(~matcher=`Str("+")) |> FireEvent.click |> ignore
+    );
+
+    result
+    |> getByText(~matcher=`Str("Count: 1"))
+    |> expect
+    |> toMatchSnapshot;
+  });
 });
