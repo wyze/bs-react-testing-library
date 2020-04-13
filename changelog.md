@@ -1,5 +1,10 @@
 ## Change Log
 
+### [v0.7.2](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.7.2) (2020-04-13)
+
+* Fix bsconfig.json to allow `test` command to run ([@wyze](https://github.com/wyze) in [48b5343](https://github.com/wyze/bs-react-testing-library/commit/48b5343))
+* Run bisect conditionally ([@wyze](https://github.com/wyze) in [#20](https://github.com/wyze/bs-react-testing-library/pull/20))
+
 ### [v0.7.1](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.7.1) (2020-04-12)
 
 * Add support for `act` helper function ([@jihchi](https://github.com/jihchi) in [#17](https://github.com/wyze/bs-react-testing-library/pull/17))
