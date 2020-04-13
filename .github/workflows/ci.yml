@@ -20,6 +20,6 @@ jobs:
           deno-version: 0.40
       - run: yarn install --frozen-lockfile
       - run: yarn --check-files
-      - run: deno run --allow-read --allow-write https://github.com/wyze/conditional-bisect/mod.ts
+      - run: deno run --allow-read --allow-write https://github.com/wyze/conditional-bisect/blob/master/mod.ts
       - run: yarn test:coverage
       - run: yarn bisect-ppx-report send-to Codecov
