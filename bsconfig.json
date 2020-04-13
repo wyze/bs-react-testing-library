@@ -22,8 +22,7 @@
     "reason-react"
   ],
   "bs-dev-dependencies": [
-    "@glennsl/bs-jest",
-    "bisect_ppx"
+    "@glennsl/bs-jest"
   ],
   "sources": [
     {
