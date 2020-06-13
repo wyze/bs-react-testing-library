@@ -84,7 +84,7 @@ type renderOptions = {
 };
 
 [@bs.module "@testing-library/react"]
-external cleanup: unit => unit = "cleanup";
+external cleanup: unit => Js.Promise.t(unit) = "cleanup";
 
 let act: (unit => unit) => unit;
 

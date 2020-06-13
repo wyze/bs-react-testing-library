@@ -16,14 +16,15 @@ module Counter = {
 
   [@react.component]
   let make = () => {
-    let (state, dispatch) = React.useReducer(
-      (state, action) =>
-        switch (action) {
-        | Inc => state + 1
-        | Dec => state - 1
-        },
-      0
-    );
+    let (state, dispatch) =
+      React.useReducer(
+        (state, action) =>
+          switch (action) {
+          | Inc => state + 1
+          | Dec => state - 1
+          },
+        0,
+      );
 
     <div>
       {ReasonReact.string("Count: " ++ string_of_int(state))}
@@ -33,7 +34,7 @@ module Counter = {
       <button onClick={_event => dispatch(Dec)}>
         {ReasonReact.string("-")}
       </button>
-    </div>
+    </div>;
   };
 };
 
@@ -684,5 +685,21 @@ describe("ReactTestingLibrary", () => {
     |> getByText(~matcher=`Str("Count: 1"))
     |> expect
     |> toMatchSnapshot;
+  });
+
+  testPromise("Cleaunp, (element not found)", () => {
+    let result = element |> render;
+
+    cleanup()
+    |> Js.Promise.(
+         then_(_ => {
+           Js.Promise.resolve(
+             result
+             |> queryByTestId(~matcher=`Str("h1-heading"))
+             |> expect
+             |> toMatchSnapshot,
+           )
+         })
+       );
   });
 });

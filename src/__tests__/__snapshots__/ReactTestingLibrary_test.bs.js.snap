@@ -400,6 +400,8 @@ exports[`ReactTestingLibrary ByTitle queryByTitle works 1`] = `
 />
 `;
 
+exports[`ReactTestingLibrary Cleaunp, (element not found) 1`] = `null`;
+
 exports[`ReactTestingLibrary act works 1`] = `
 <div>
   Count: 1
