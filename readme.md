@@ -76,10 +76,13 @@ $ yarn test
 
 > [Full Change Log](changelog.md)
 
-### [v0.7.2](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.7.2) (2020-04-13)
+### [v0.7.3](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.7.3) (2020-06-18)
 
-* Fix bsconfig.json to allow `test` command to run ([@wyze](https://github.com/wyze) in [48b5343](https://github.com/wyze/bs-react-testing-library/commit/48b5343))
-* Run bisect conditionally ([@wyze](https://github.com/wyze) in [#20](https://github.com/wyze/bs-react-testing-library/pull/20))
+* Fix test command ([@wyze](https://github.com/wyze) in [f9c5987](https://github.com/wyze/bs-react-testing-library/commit/f9c5987))
+* Bump version for bs-dom-testing-library ([@johnridesabike](https://github.com/johnridesabike) in [#24](https://github.com/wyze/bs-react-testing-library/pull/24))
+* Change type of cleanup function ([@denis-ok](https://github.com/denis-ok) in [#23](https://github.com/wyze/bs-react-testing-library/pull/23))
+* Use denopkg.com ([@wyze](https://github.com/wyze) in [#22](https://github.com/wyze/bs-react-testing-library/pull/22))
+* Update CI to try and work better ([@wyze](https://github.com/wyze) in [#21](https://github.com/wyze/bs-react-testing-library/pull/21))
 
 ## License
 
