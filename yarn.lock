@@ -1132,10 +1132,10 @@ browser-resolve@^1.11.3:
   dependencies:
     resolve "1.1.7"
 
-bs-dom-testing-library@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/bs-dom-testing-library/-/bs-dom-testing-library-0.6.1.tgz#0de5fefa1796e9796622abdfe7536bf37ca8577c"
-  integrity sha512-4RSHYf0IpSQPnbFNYS26PqWBT6Xqk3DetnLAElP3qiD2qa3ertqNUDtgIB5jN1BXcDsJ3myAdDDE7QVlqnTgpw==
+bs-dom-testing-library@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/bs-dom-testing-library/-/bs-dom-testing-library-0.6.2.tgz#ddc347d2390502eb4803ba44efe23dcb3c7e3f47"
+  integrity sha512-2B7VL5z/26MATtifzLGpoIA5bnCKrWXouvJ8dd9gmavxi2sWg0Kwt61Id5WhJbBsulRjTWB6u4NU7amDJMfS9g==
   dependencies:
     "@testing-library/dom" "^7.1.3"
 
