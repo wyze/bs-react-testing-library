@@ -76,13 +76,10 @@ $ yarn test
 
 > [Full Change Log](changelog.md)
 
-### [v0.7.3](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.7.3) (2020-06-18)
+### [v0.8.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.8.0) (2020-10-21)
 
-* Fix test command ([@wyze](https://github.com/wyze) in [f9c5987](https://github.com/wyze/bs-react-testing-library/commit/f9c5987))
-* Bump version for bs-dom-testing-library ([@johnridesabike](https://github.com/johnridesabike) in [#24](https://github.com/wyze/bs-react-testing-library/pull/24))
-* Change type of cleanup function ([@denis-ok](https://github.com/denis-ok) in [#23](https://github.com/wyze/bs-react-testing-library/pull/23))
-* Use denopkg.com ([@wyze](https://github.com/wyze) in [#22](https://github.com/wyze/bs-react-testing-library/pull/22))
-* Update CI to try and work better ([@wyze](https://github.com/wyze) in [#21](https://github.com/wyze/bs-react-testing-library/pull/21))
+* Upgrade to latest dependencies ([@wyze](https://github.com/wyze) in [#27](https://github.com/wyze/bs-react-testing-library/pull/27))
+* Add sponsor button ([@wyze](https://github.com/wyze) in [c69f028](https://github.com/wyze/bs-react-testing-library/commit/c69f028))
 
 ## License
 
