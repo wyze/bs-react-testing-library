@@ -690,16 +690,13 @@ describe("ReactTestingLibrary", () => {
   testPromise("Cleaunp, (element not found)", () => {
     let result = element |> render;
 
-    cleanup()
-    |> Js.Promise.(
-         then_(_ => {
-           Js.Promise.resolve(
-             result
-             |> queryByTestId(~matcher=`Str("h1-heading"))
-             |> expect
-             |> toMatchSnapshot,
-           )
-         })
-       );
+    cleanup();
+
+    Js.Promise.resolve(
+      result
+      |> queryByTestId(~matcher=`Str("h1-heading"))
+      |> expect
+      |> toMatchSnapshot,
+    );
   });
 });
