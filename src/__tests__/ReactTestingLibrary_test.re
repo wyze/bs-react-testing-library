@@ -6,7 +6,7 @@ afterAll(Bisect.Runtime.write_coverage_data);
 
 module Greeting = {
   [@react.component]
-  let make = (~message) => <div> {ReasonReact.string(message)} </div>;
+  let make = (~message) => <div> {React.string(message)} </div>;
 };
 
 module Counter = {
@@ -27,12 +27,12 @@ module Counter = {
       );
 
     <div>
-      {ReasonReact.string("Count: " ++ string_of_int(state))}
+      {React.string("Count: " ++ string_of_int(state))}
       <button onClick={_event => dispatch(Inc)}>
-        {ReasonReact.string("+")}
+        {React.string("+")}
       </button>
       <button onClick={_event => dispatch(Dec)}>
-        {ReasonReact.string("-")}
+        {React.string("-")}
       </button>
     </div>;
   };
@@ -47,11 +47,10 @@ describe("ReactTestingLibrary", () => {
   open Expect;
 
   let element =
-    <div style={ReactDOMRe.Style.make(~color="rebeccapurple", ())}>
-      {ReasonReact.cloneElement(
+    <div style={ReactDOM.Style.make(~color="rebeccapurple", ())}>
+      {React.cloneElement(
          <h1 />,
-         ~props={"data-testid": "h1-heading"},
-         [|ReasonReact.string("Heading")|],
+         {"data-testid": "h1-heading", "children": React.string("Heading")},
        )}
     </div>;
 

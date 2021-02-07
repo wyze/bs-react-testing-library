@@ -30,7 +30,7 @@ let act = callback =>
   });
 
 [@bs.module "@testing-library/react"]
-external _render: (ReasonReact.reactElement, renderOptions) => renderResult =
+external _render: (React.element, renderOptions) => renderResult =
   "render";
 
 [@bs.get] external container: renderResult => Dom.element = "container";
@@ -44,7 +44,7 @@ external _debug: (Js.undefined(Dom.element), Js.undefined(int)) => unit =
 [@bs.send.pipe: renderResult] external unmount: unit => bool = "unmount";
 
 [@bs.send.pipe: renderResult]
-external rerender: ReasonReact.reactElement => unit = "rerender";
+external rerender: React.element => unit = "rerender";
 
 [@bs.send.pipe: renderResult]
 external asFragment: unit => Dom.element = "asFragment";
