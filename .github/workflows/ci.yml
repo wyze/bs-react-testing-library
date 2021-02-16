@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Setup Deno 0.40
-        uses: denolib/setup-deno@220d9c6
+        uses: denolib/setup-deno@v2
         with:
           deno-version: '0.40'
       - run: yarn install --frozen-lockfile
