@@ -1,5 +1,10 @@
 ## Change Log
 
+### [v0.9.0](https://github.com/tomvardasca/rescript-react-testing-library/releases/tag/v0.9.0) (2021-02-16)
+
+* Upgrade to latest dependencies and upgrade to `@rescript/react`
+* Change repo and package name from `bs-react-testing-library` to `rescript-react-testing-library`
+
 ### [v0.8.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.8.0) (2020-10-21)
 
 * Upgrade to latest dependencies ([@wyze](https://github.com/wyze) in [#27](https://github.com/wyze/bs-react-testing-library/pull/27))

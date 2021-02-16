@@ -1,17 +1,22 @@
 {
-  "name": "bs-react-testing-library",
-  "version": "0.8.0",
-  "description": "BuckleScript bindings for react-testing-library.",
-  "repository": "wyze/bs-react-testing-library",
+  "name": "@tomvardasca/rescript-react-testing-library",
+  "version": "0.9.0",
+  "description": "ReScript bindings for react-testing-library.",
+  "repository": "tomvardasca/rescript-react-testing-library",
   "author": {
     "name": "Neil Kistner",
-    "email": "neil.kistner@gmail.com",
-    "url": "https://neilkistner.com"
+    "email": "neil.kistner@gmail.com"
   },
+  "contributors": [
+    {
+      "name": "Tomé Vardasca",
+      "email": "tome@vardas.ca"
+    }
+  ],
   "license": "MIT",
   "files": [
-    "src/*.re",
-    "src/*.rei",
+    "src/*.res",
+    "src/*.resi",
     "bsconfig.json"
   ],
   "scripts": {
