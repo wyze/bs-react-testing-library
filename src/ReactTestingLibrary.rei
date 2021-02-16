@@ -682,7 +682,7 @@ let findAllByTestId:
   Js.Promise.t(array(Dom.element));
 
 [@bs.send.pipe: renderResult]
-external rerender: ReasonReact.reactElement => unit = "rerender";
+external rerender: React.element => unit = "rerender";
 
 let render:
   (
@@ -691,7 +691,7 @@ let render:
     ~hydrate: bool=?,
     ~wrapper: Dom.element=?,
     ~queries: queries=?,
-    ReasonReact.reactElement
+    React.element
   ) =>
   renderResult;
 

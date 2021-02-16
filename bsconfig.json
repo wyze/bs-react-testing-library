@@ -19,7 +19,7 @@
   "suffix": ".bs.js",
   "bs-dependencies": [
     "bs-dom-testing-library",
-    "reason-react"
+    "@rescript/react"
   ],
   "bs-dev-dependencies": [
     "@glennsl/bs-jest",
