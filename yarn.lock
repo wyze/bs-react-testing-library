@@ -612,6 +612,11 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@rescript/react@^0.10.2":
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/@rescript/react/-/react-0.10.2.tgz#170d2a5ff34ad09cd614d92467d5efad95202794"
+  integrity sha512-Qe21P4WnrmrbhbEMQ4dpaXC1/iMMc7JmqjuSpZouSP+s41K5dCXUGY9sds30gajU74lSfJdG2PzSDYcNAcDyVA==
+
 "@sheerun/mutationobserver-shim@^0.3.3":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz#5405ee8e444ed212db44e79351f0c70a582aae25"
@@ -1128,10 +1133,10 @@ bs-dom-testing-library@^0.7.0:
   dependencies:
     "@testing-library/dom" "^7.26.3"
 
-bs-platform@^8.3.1:
-  version "8.3.1"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-8.3.1.tgz#49ac0d7b84bcec190a7361353557cae965f92c67"
-  integrity sha512-U7nKEGF1BfvODzcv1g2loeltE8YRCgX8mMlCojImsgI0HwfQKEq7ggO5dF1ae9ZfFxiLaI0069ZyoK5GLBO2OQ==
+bs-platform@^8.4.2:
+  version "8.4.2"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-8.4.2.tgz#778dabd1dfb3bc95e0086c58dabae74e4ebdee8a"
+  integrity sha512-9q7S4/LLV/a68CweN382NJdCCr/lOSsJR3oQYnmPK98ChfO/AdiA3lYQkQTp6T+U0I5Z5RypUAUprNstwDtMDQ==
 
 bser@^2.0.0:
   version "2.0.0"
@@ -3590,11 +3595,6 @@ realpath-native@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/realpath-native/-/realpath-native-2.0.0.tgz#7377ac429b6e1fd599dc38d08ed942d0d7beb866"
   integrity sha512-v1SEYUOXXdbBZK8ZuNgO4TBjamPsiSgcFr0aP+tEKpQZK8vooEUqV6nm6Cv502mX4NF2EfsnVqtNAHG+/6Ur1Q==
-
-reason-react@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/reason-react/-/reason-react-0.9.1.tgz#30a887158200b659aa03e2d75ff4cc54dc462bb0"
-  integrity sha512-nlH0O2TDy9KzOLOW+vlEQk4ExHOeciyzFdoLcsmmiit6hx6H5+CVDrwJ+8aiaLT/kqK5xFOjy4PS7PftWz4plA==
 
 regenerator-runtime@^0.13.4:
   version "0.13.5"

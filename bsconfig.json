@@ -1,9 +1,6 @@
 {
   "name": "bs-react-testing-library",
-  "bsc-flags": [
-    "-bs-no-version-header",
-    "-bs-super-errors"
-  ],
+  "bsc-flags": ["-bs-no-version-header", "-bs-super-errors"],
   "warnings": {
     "number": "+A-48-42",
     "error": "+A-3-44-102"
@@ -17,14 +14,8 @@
     "in-source": true
   },
   "suffix": ".bs.js",
-  "bs-dependencies": [
-    "bs-dom-testing-library",
-    "reason-react"
-  ],
-  "bs-dev-dependencies": [
-    "@glennsl/bs-jest",
-    "bisect_ppx"
-  ],
+  "bs-dependencies": ["bs-dom-testing-library", "@rescript/react"],
+  "bs-dev-dependencies": ["@glennsl/bs-jest", "bisect_ppx"],
   "sources": [
     {
       "dir": "src",
