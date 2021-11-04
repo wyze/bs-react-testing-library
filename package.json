@@ -1,25 +1,25 @@
 {
-  "name": "bs-react-testing-library",
+  "name": "rescript-react-testing-library",
   "version": "0.8.0",
-  "description": "BuckleScript bindings for react-testing-library.",
-  "repository": "wyze/bs-react-testing-library",
+  "description": "Rescript bindings for react-testing-library based on Neil Kistner's BuckleScript bindings for React Testing Library",
+  "repository": "sacarr/rescript-react-testing-library",
   "author": {
-    "name": "Neil Kistner",
-    "email": "neil.kistner@gmail.com",
-    "url": "https://neilkistner.com"
+    "name": "Ratoon, LLC",
+    "email": "info@ratooncorp.io",
+    "url": "https://ratooncorp.io"
   },
   "license": "MIT",
   "files": [
-    "src/*.re",
-    "src/*.rei",
+    "src/*.res",
+    "src/*.resi",
     "bsconfig.json"
   ],
   "scripts": {
     "build": "bsb -make-world",
-    "clean": "run-p clean:*",
+    "clean": "run-p clean:bsb clean:project",
     "clean:bsb": "bsb -clean-world",
     "clean:project": "rimraf _coverage lib .merlin *.coverage",
-    "jest": "jest --setupTestFrameworkScriptFile=./setupTests.js",
+    "jest": "jest",
     "postversion": "github-release",
     "prebuild": "yarn clean",
     "pretest": "yarn build",
@@ -29,22 +29,26 @@
     "version": "changelog"
   },
   "keywords": [
-    "bucklescript",
+    "rescript",
     "react",
     "testing"
   ],
   "dependencies": {
     "@testing-library/react": "^11.1.0",
-    "bs-dom-testing-library": "^0.7.0"
+    "bs-dom-testing-library": "^0.7.0",
+    "jest": "^27.3.1"
   },
   "peerDependencies": {
     "reason-react": "< 0.8.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
     "@glennsl/bs-jest": "^0.5.1",
     "@sheerun/mutationobserver-shim": "^0.3.3",
     "@wyze/changelog": "^1.0.0",
     "@wyze/github-release": "^1.1.1",
+    "babel-jest": "^27.3.1",
     "bisect_ppx": "^2.5.0",
     "bs-platform": "^8.3.1",
     "npm-run-all": "^4.1.5",
@@ -52,5 +56,6 @@
     "react-dom": "^17.0.0",
     "reason-react": "^0.9.1",
     "rimraf": "^3.0.2"
-  }
+  },
+  "packageManager": "yarn@3.1.0"
 }

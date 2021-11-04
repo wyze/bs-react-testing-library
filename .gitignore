@@ -1,9 +1,21 @@
+# Yarn package manager (berry release) for zero-installs
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 # Dependencies
 node_modules
 
 # Build
-_coverage
+coverage/**/*
 src/**/*.bs.js
+src/**/*.mjs
+src/**/*.snap
 lib
 .bsb.lock
 .merlin
