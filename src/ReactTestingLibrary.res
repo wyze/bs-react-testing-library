@@ -29,7 +29,7 @@ let act = callback =>
   })
 
 @module("@testing-library/react")
-external _render: (ReasonReact.reactElement, renderOptions) => renderResult = "render"
+external _render: (React.element, renderOptions) => renderResult = "render"
 
 @get external container: renderResult => Dom.element = "container"
 
@@ -37,7 +37,7 @@ external _render: (ReasonReact.reactElement, renderOptions) => renderResult = "r
 
 @send external _debug: (renderResult, Js.undefined<Dom.element>, Js.undefined<int>) => unit = "debug"
 @send external unmount: (renderResult, unit) => bool = "unmount"
-@send external rerender: (renderResult, ReasonReact.reactElement) => unit = "rerender"
+@send external rerender: (renderResult, React.element) => unit = "rerender"
 @send external asFragment: (renderResult, unit) => Dom.element = "asFragment"
 
 // ByLabelText

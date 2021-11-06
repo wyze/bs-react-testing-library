@@ -195,7 +195,7 @@ module.exports = {
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   transformIgnorePatterns: [
-    "node_modules/(?!(@glennsl/bs-jest|@testing-library/dom|bisect_ppx|bs-webapi|rescript)/)"
+    "node_modules/(?!(@glennsl/bs-jest|@testing-library/dom|bisect_ppx|bs-dom-testing-library|bs-webapi|rescript)/)"
   //   "/node_modules/",
   //   "\\.pnp\\.[^\\/]+$",
   //   "/src/"

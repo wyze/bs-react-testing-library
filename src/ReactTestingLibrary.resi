@@ -581,10 +581,10 @@ let findAllByTestId: (
   ~options: DomTestingLibrary.ByTestIdQuery.options=?,
   ()) => Js.Promise.t<array<Dom.element>>
 
-@send external rerender: (renderResult, ReasonReact.reactElement) => unit = "rerender"
+@send external rerender: (renderResult, React.element) => unit = "rerender"
 
 let render: (
-  ReasonReact.reactElement,
+  React.element,
   ~baseElement: Dom.element=?,
   ~container: Dom.element=?,
   ~hydrate: bool=?,

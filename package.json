@@ -34,12 +34,10 @@
     "testing"
   ],
   "dependencies": {
+    "@rescript/react": "^0.10.3",
     "@testing-library/react": "^11.1.0",
     "bs-dom-testing-library": "^0.7.0",
     "jest": "^27.3.1"
-  },
-  "peerDependencies": {
-    "reason-react": "< 0.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -52,7 +50,6 @@
     "bisect_ppx": "^2.6.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "reason-react": "^0.9.1",
     "rescript": "^9.1.4",
     "rimraf": "^3.0.2",
     "yarn-run-all": "^3.1.1"

@@ -1731,6 +1731,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rescript/react@npm:^0.10.3":
+  version: 0.10.3
+  resolution: "@rescript/react@npm:0.10.3"
+  peerDependencies:
+    react: ">=16.8.1"
+    react-dom: ">=16.8.1"
+  checksum: 8561282f78b87c73c864b21d7f94f23545b6e7488167370aab2effa9268bab14f78b948dd0de4b84580467eff7c55c7dd1d080726ec63cb5b2dde030d37a1fbf
+  languageName: node
+  linkType: hard
+
 "@sheerun/mutationobserver-shim@npm:^0.3.3":
   version: 0.3.3
   resolution: "@sheerun/mutationobserver-shim@npm:0.3.3"
@@ -6792,17 +6802,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"reason-react@npm:^0.9.1":
-  version: 0.9.1
-  resolution: "reason-react@npm:0.9.1"
-  peerDependencies:
-    bs-platform: ^7.1.1
-    react: ^16.8.1
-    react-dom: ^16.8.1
-  checksum: 08e363fbf4ada90445081a2355d08008d6e31f7c36e4d9e29e1f341f2e2fdc06a74b562ad8192de924dd69223ddb090b690122ca41a4c63c9cef2aca4de05822
-  languageName: node
-  linkType: hard
-
 "regenerate-unicode-properties@npm:^9.0.0":
   version: 9.0.0
   resolution: "regenerate-unicode-properties@npm:9.0.0"
@@ -6919,6 +6918,7 @@ __metadata:
     "@babel/core": ^7.16.0
     "@babel/preset-env": ^7.16.0
     "@glennsl/bs-jest": ^0.7.0
+    "@rescript/react": ^0.10.3
     "@sheerun/mutationobserver-shim": ^0.3.3
     "@testing-library/react": ^11.1.0
     "@wyze/changelog": ^1.0.0
@@ -6929,12 +6929,9 @@ __metadata:
     jest: ^27.3.1
     react: ^17.0.2
     react-dom: ^17.0.2
-    reason-react: ^0.9.1
     rescript: ^9.1.4
     rimraf: ^3.0.2
     yarn-run-all: ^3.1.1
-  peerDependencies:
-    reason-react: < 0.8.0
   languageName: unknown
   linkType: soft
 
