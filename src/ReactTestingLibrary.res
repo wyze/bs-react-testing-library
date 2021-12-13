@@ -18,7 +18,7 @@ type renderOptions = {
 external cleanup: unit => unit = "cleanup"
 
 @module("@testing-library/react")
-external _act: (unit => Js.undefined<Js.Promise.t<'a>>) => unit = "act"
+external _act: (unit => Js.undefined<Promise.t<'a>>) => unit = "act"
 
 let act = callback =>
   _act(() => {
@@ -106,7 +106,7 @@ let queryAllByLabelText = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByLabelTextQuery.options>,
-) => Js.Promise.t<Dom.element> = "findByLabelText"
+) => Promise.t<Dom.element> = "findByLabelText"
 
 let findByLabelText = (result, ~matcher, ~options=?, ()) =>
   _findByLabelText(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -120,7 +120,7 @@ let findByLabelText = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByLabelTextQuery.options>,
-) => Js.Promise.t<array<Dom.element>> = "findAllByLabelText"
+) => Promise.t<array<Dom.element>> = "findAllByLabelText"
 
 let findAllByLabelText = (result, ~matcher, ~options=?, ()) =>
   _findAllByLabelText(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -191,7 +191,7 @@ let queryAllByPlaceholderText = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByPlaceholderTextQuery.options>,
-) => Js.Promise.t<Dom.element> = "findByPlaceholderText"
+) => Promise.t<Dom.element> = "findByPlaceholderText"
 
 let findByPlaceholderText = (result, ~matcher, ~options=?, ()) =>
   _findByPlaceholderText(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -205,7 +205,7 @@ let findByPlaceholderText = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByPlaceholderTextQuery.options>,
-) => Js.Promise.t<array<Dom.element>> = "findAllByPlaceholderText"
+) => Promise.t<array<Dom.element>> = "findAllByPlaceholderText"
 
 let findAllByPlaceholderText = (result, ~matcher, ~options=?, ()) =>
   _findAllByPlaceholderText(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -276,7 +276,7 @@ let queryAllByText = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByTextQuery.options>,
-) => Js.Promise.t<Dom.element> = "findByText"
+) => Promise.t<Dom.element> = "findByText"
 
 let findByText = (result, ~matcher, ~options=?, ()) =>
   _findByText(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -290,7 +290,7 @@ let findByText = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByTextQuery.options>,
-) => Js.Promise.t<array<Dom.element>> = "findAllByText"
+) => Promise.t<array<Dom.element>> = "findAllByText"
 
 let findAllByText = (result, ~matcher, ~options=?, ()) =>
   _findAllByText(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -361,7 +361,7 @@ let queryAllByAltText = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByAltTextQuery.options>,
-) => Js.Promise.t<Dom.element> = "findByAltText"
+) => Promise.t<Dom.element> = "findByAltText"
 
 let findByAltText = (result, ~matcher, ~options=?, ()) =>
   _findByAltText(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -375,7 +375,7 @@ let findByAltText = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByAltTextQuery.options>,
-) => Js.Promise.t<array<Dom.element>> = "findAllByAltText"
+) => Promise.t<array<Dom.element>> = "findAllByAltText"
 
 let findAllByAltText = (result, ~matcher, ~options=?, ()) =>
   _findAllByAltText(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -446,7 +446,7 @@ let queryAllByTitle = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByTitleQuery.options>,
-) => Js.Promise.t<Dom.element> = "findByTitle"
+) => Promise.t<Dom.element> = "findByTitle"
 
 let findByTitle = (result, ~matcher, ~options=?, ()) =>
   _findByTitle(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -460,7 +460,7 @@ let findByTitle = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByTitleQuery.options>,
-) => Js.Promise.t<array<Dom.element>> = "findAllByTitle"
+) => Promise.t<array<Dom.element>> = "findAllByTitle"
 
 let findAllByTitle = (result, ~matcher, ~options=?, ()) =>
   _findAllByTitle(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -531,7 +531,7 @@ let queryAllByDisplayValue = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByDisplayValueQuery.options>,
-) => Js.Promise.t<Dom.element> = "findByDisplayValue"
+) => Promise.t<Dom.element> = "findByDisplayValue"
 
 let findByDisplayValue = (result, ~matcher, ~options=?, ()) =>
   _findByDisplayValue(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -545,7 +545,7 @@ let findByDisplayValue = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByDisplayValueQuery.options>,
-) => Js.Promise.t<array<Dom.element>> = "findAllByDisplayValue"
+) => Promise.t<array<Dom.element>> = "findAllByDisplayValue"
 
 let findAllByDisplayValue = (result, ~matcher, ~options=?, ()) =>
   _findAllByDisplayValue(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -616,7 +616,7 @@ let queryAllByRole = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByRoleQuery.options>,
-) => Js.Promise.t<Dom.element> = "findByRole"
+) => Promise.t<Dom.element> = "findByRole"
 
 let findByRole = (result, ~matcher, ~options=?, ()) =>
   _findByRole(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -630,7 +630,7 @@ let findByRole = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByRoleQuery.options>,
-) => Js.Promise.t<array<Dom.element>> = "findAllByRole"
+) => Promise.t<array<Dom.element>> = "findAllByRole"
 
 let findAllByRole = (result, ~matcher, ~options=?, ()) =>
   _findAllByRole(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -701,7 +701,7 @@ let queryAllByTestId = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByTestIdQuery.options>,
-) => Js.Promise.t<Dom.element> = "findByTestId"
+) => Promise.t<Dom.element> = "findByTestId"
 
 let findByTestId = (result, ~matcher, ~options=?, ()) =>
   _findByTestId(result, ~matcher, ~options=Js.Undefined.fromOption(options))
@@ -715,7 +715,7 @@ let findByTestId = (result, ~matcher, ~options=?, ()) =>
     | #Func((string, Dom.element) => bool)
   ],
   ~options: Js.undefined<ByTestIdQuery.options>,
-) => Js.Promise.t<array<Dom.element>> = "findAllByTestId"
+) => Promise.t<array<Dom.element>> = "findAllByTestId"
 
 let findAllByTestId = (result, ~matcher, ~options=?, ()) =>
   _findAllByTestId(result, ~matcher, ~options=Js.Undefined.fromOption(options))

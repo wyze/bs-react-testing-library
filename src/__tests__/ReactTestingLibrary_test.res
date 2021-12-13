@@ -1,6 +1,6 @@
 @@coverage(exclude_file)
 
-open Jest
+open GlennslRescriptJest.Jest
 
 afterAll(Bisect.Runtime.write_coverage_data)
 
@@ -59,14 +59,14 @@ describe("ReactTestingLibrary", () => {
     test("getByLabelText works", () =>
       labelText
       -> render()
-      -> getByLabelText(~matcher=#Str("Username"))
+      -> getByLabelText(~matcher=#Str("Username"), ())
       -> expect
       -> toMatchSnapshot
     )
     test("getAllByLabelText works", () =>
       labelText
       -> render()
-      -> getAllByLabelText(~matcher=#Str("Username"))
+      -> getAllByLabelText(~matcher=#Str("Username"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -74,7 +74,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByLabelText works", () =>
       labelText
       -> render()
-      -> queryByLabelText(~matcher=#Str("Username"))
+      -> queryByLabelText(~matcher=#Str("Username"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -82,7 +82,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByLabelText works (element not found)", () =>
       labelText
       -> render()
-      -> queryByLabelText(~matcher=#Str("!@#$Username!@#$"))
+      -> queryByLabelText(~matcher=#Str("!@#$Username!@#$"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -90,7 +90,7 @@ describe("ReactTestingLibrary", () => {
     test("queryAllByLabelText works", () =>
       labelText
       -> render()
-      -> queryAllByLabelText(~matcher=#Str("Username"))
+      -> queryAllByLabelText(~matcher=#Str("Username"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -98,14 +98,14 @@ describe("ReactTestingLibrary", () => {
       labelText
       -> render()
       -> findByLabelText(~matcher=#Str("Username"), ())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
 
     testPromise("findAllByLabelText works", () =>
       labelText
       -> render()
-      -> findAllByLabelText(~matcher=#Str("Username"),())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> findAllByLabelText(~matcher=#Str("Username"), ())
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
   })
 
@@ -117,7 +117,7 @@ describe("ReactTestingLibrary", () => {
     test("getByPlaceholderText works", () =>
       placeholderText
       -> render()
-      -> getByPlaceholderText(~matcher=#Str("Username"))
+      -> getByPlaceholderText(~matcher=#Str("Username"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -125,7 +125,7 @@ describe("ReactTestingLibrary", () => {
     test("getAllByPlaceholderText works", () =>
       placeholderText
       -> render()
-      -> getAllByPlaceholderText(~matcher=#Str("Username"))
+      -> getAllByPlaceholderText(~matcher=#Str("Username"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -133,7 +133,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByPlaceholderText works", () =>
       placeholderText
       -> render()
-      -> queryByPlaceholderText(~matcher=#Str("Username"))
+      -> queryByPlaceholderText(~matcher=#Str("Username"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -141,7 +141,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByPlaceholderText works (element not found)", () =>
       placeholderText
       -> render()
-      -> queryByPlaceholderText(~matcher=#Str("!@#$Username!@#$"))
+      -> queryByPlaceholderText(~matcher=#Str("!@#$Username!@#$"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -149,7 +149,7 @@ describe("ReactTestingLibrary", () => {
     test("queryAllByPlaceholderText works", () =>
       placeholderText
       -> render()
-      -> queryAllByPlaceholderText(~matcher=#Str("Username"))
+      -> queryAllByPlaceholderText(~matcher=#Str("Username"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -157,15 +157,15 @@ describe("ReactTestingLibrary", () => {
     testPromise("findByPlaceholderText works", () =>
       placeholderText
       -> render()
-      -> findByPlaceholderText(~matcher=#Str("Username"),())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> findByPlaceholderText(~matcher=#Str("Username"), ())
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
 
     testPromise("findAllByPlaceholderText works", () =>
       placeholderText
       -> render()
-      -> findAllByPlaceholderText(~matcher=#Str("Username"),())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> findAllByPlaceholderText(~matcher=#Str("Username"), ())
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
   })
   // ByText
@@ -175,7 +175,7 @@ describe("ReactTestingLibrary", () => {
     test("getByText works", () =>
       text
       -> render()
-      -> getByText(~matcher=#Str(j`About ℹ️`))
+      -> getByText(~matcher=#Str(j`About ℹ️`), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -183,7 +183,7 @@ describe("ReactTestingLibrary", () => {
     test("getAllByText works", () =>
       text
       -> render()
-      -> getAllByText(~matcher=#Str(j`About ℹ️`))
+      -> getAllByText(~matcher=#Str(j`About ℹ️`), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -191,7 +191,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByText works", () =>
       text
       -> render()
-      -> queryByText(~matcher=#Str(j`About ℹ️`))
+      -> queryByText(~matcher=#Str(j`About ℹ️`), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -199,7 +199,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByText works (element not found)", () =>
       text
       -> render()
-      -> queryByText(~matcher=#Str(j`!@#About ℹ️!@#`))
+      -> queryByText(~matcher=#Str(j`!@#About ℹ️!@#`), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -207,7 +207,7 @@ describe("ReactTestingLibrary", () => {
     test("queryAllByText works", () =>
       text
       -> render()
-      -> queryAllByText(~matcher=#Str(j`About ℹ️`))
+      -> queryAllByText(~matcher=#Str(j`About ℹ️`), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -216,14 +216,14 @@ describe("ReactTestingLibrary", () => {
       text
       -> render()
       -> findByText(~matcher=#Str(j`About ℹ️`), ())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
 
     testPromise("findAllByText works", () =>
       text
       -> render()
       -> findAllByText(~matcher=#Str(j`About ℹ️`), ())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
   })
   // ByAltText
@@ -237,7 +237,7 @@ describe("ReactTestingLibrary", () => {
     test("getByAltText works", () =>
       altText
       -> render()
-      -> getByAltText(~matcher=#Str("Incredibles 2 Poster"))
+      -> getByAltText(~matcher=#Str("Incredibles 2 Poster"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -245,7 +245,7 @@ describe("ReactTestingLibrary", () => {
     test("getAllByAltText works", () =>
       altText
       -> render()
-      -> getAllByAltText(~matcher=#Str("Incredibles 2 Poster"))
+      -> getAllByAltText(~matcher=#Str("Incredibles 2 Poster"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -253,7 +253,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByAltText works", () =>
       altText
       -> render()
-      -> queryByAltText(~matcher=#Str("Incredibles 2 Poster"))
+      -> queryByAltText(~matcher=#Str("Incredibles 2 Poster"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -261,7 +261,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByAltText works (element not found)", () =>
       altText
       -> render()
-      -> queryByAltText(~matcher=#Str("!@#$Incredibles 2 Poster!@#$"))
+      -> queryByAltText(~matcher=#Str("!@#$Incredibles 2 Poster!@#$"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -269,7 +269,7 @@ describe("ReactTestingLibrary", () => {
     test("queryAllByAltText works", () =>
       altText
       -> render()
-      -> queryAllByAltText(~matcher=#Str("Incredibles 2 Poster"))
+      -> queryAllByAltText(~matcher=#Str("Incredibles 2 Poster"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -278,14 +278,14 @@ describe("ReactTestingLibrary", () => {
       altText
       -> render()
       -> findByAltText(~matcher=#Str("Incredibles 2 Poster"), ())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
 
     testPromise("findAllByAltText works", () =>
       altText
       -> render()
       -> findAllByAltText(~matcher=#Str("Incredibles 2 Poster"), ())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
   })
 
@@ -300,7 +300,7 @@ describe("ReactTestingLibrary", () => {
     test("getByTitle works", () =>
       title
       -> render()
-      -> getByTitle(~matcher=#Str("Delete"))
+      -> getByTitle(~matcher=#Str("Delete"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -308,7 +308,7 @@ describe("ReactTestingLibrary", () => {
     test("getAllByTitle works", () =>
       title
       -> render()
-      -> getAllByTitle(~matcher=#Str("Delete"))
+      -> getAllByTitle(~matcher=#Str("Delete"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -316,7 +316,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByTitle works", () =>
       title
       -> render()
-      -> queryByTitle(~matcher=#Str("Delete"))
+      -> queryByTitle(~matcher=#Str("Delete"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -324,7 +324,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByTitle works (element not found)", () =>
       title
       -> render()
-      -> queryByTitle(~matcher=#Str("!@#$Delete!@#$"))
+      -> queryByTitle(~matcher=#Str("!@#$Delete!@#$"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -332,7 +332,7 @@ describe("ReactTestingLibrary", () => {
     test("queryAllByTitle works", () =>
       title
       -> render()
-      -> queryAllByTitle(~matcher=#Str("Delete"))
+      -> queryAllByTitle(~matcher=#Str("Delete"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -340,14 +340,14 @@ describe("ReactTestingLibrary", () => {
       title
       -> render()
       -> findByTitle(~matcher=#Str("Delete"), ())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
 
     testPromise("findAllByTitle works", () =>
       title
       -> render()
       -> findAllByTitle(~matcher=#Str("Delete"), ())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
   })
 
@@ -358,7 +358,7 @@ describe("ReactTestingLibrary", () => {
     test("getByDisplayValue works", () =>
       title
       -> render()
-      -> getByDisplayValue(~matcher=#Str("Rescript"))
+      -> getByDisplayValue(~matcher=#Str("Rescript"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -366,7 +366,7 @@ describe("ReactTestingLibrary", () => {
     test("getAllByDisplayValue works", () =>
       title
       -> render()
-      -> getAllByDisplayValue(~matcher=#Str("Rescript"))
+      -> getAllByDisplayValue(~matcher=#Str("Rescript"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -374,7 +374,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByDisplayValue works", () =>
       title
       -> render()
-      -> queryByDisplayValue(~matcher=#Str("Rescript"))
+      -> queryByDisplayValue(~matcher=#Str("Rescript"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -382,7 +382,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByDisplayValue works (element not found)", () =>
       title
       -> render()
-      -> queryByDisplayValue(~matcher=#Str("!@#$Rescript!@#$"))
+      -> queryByDisplayValue(~matcher=#Str("!@#$Rescript!@#$"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -390,7 +390,7 @@ describe("ReactTestingLibrary", () => {
     test("queryAllByDisplayValue works", () =>
       title
       -> render()
-      -> queryAllByDisplayValue(~matcher=#Str("Rescript"))
+      -> queryAllByDisplayValue(~matcher=#Str("Rescript"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -398,14 +398,14 @@ describe("ReactTestingLibrary", () => {
       title
       -> render()
       -> findByDisplayValue(~matcher=#Str("Rescript"), ())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
 
     testPromise("findAllByDisplayValue works", () =>
       title
       -> render()
       -> findAllByDisplayValue(~matcher=#Str("Rescript"), ())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
   })
 
@@ -420,7 +420,7 @@ describe("ReactTestingLibrary", () => {
     test("getByRole works", () =>
       role
       -> render()
-      -> getByRole(~matcher=#Str("button"))
+      -> getByRole(~matcher=#Str("button"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -428,7 +428,7 @@ describe("ReactTestingLibrary", () => {
     test("getAllByRole works", () =>
       role
       -> render()
-      -> getAllByRole(~matcher=#Str("button"))
+      -> getAllByRole(~matcher=#Str("button"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -436,7 +436,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByRole works", () =>
       role
       -> render()
-      -> queryByRole(~matcher=#Str("button"))
+      -> queryByRole(~matcher=#Str("button"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -444,7 +444,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByRole works (element not found)", () =>
       role
       -> render()
-      -> queryByRole(~matcher=#Str("!@#$button!@#$"))
+      -> queryByRole(~matcher=#Str("!@#$button!@#$"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -452,7 +452,7 @@ describe("ReactTestingLibrary", () => {
     test("queryAllByRole works", () =>
       role
       -> render()
-      -> queryAllByRole(~matcher=#Str("button"))
+      -> queryAllByRole(~matcher=#Str("button"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -460,14 +460,14 @@ describe("ReactTestingLibrary", () => {
       role
       -> render()
       -> findByRole(~matcher=#Str("button"), ())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
 
     testPromise("findAllByRole works", () =>
       role
       -> render()
       -> findAllByRole(~matcher=#Str("button"), ())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
   })
 
@@ -476,7 +476,7 @@ describe("ReactTestingLibrary", () => {
     test("getByTestId works", () =>
       element
       -> render()
-      -> getByTestId(~matcher=#Str("h1-heading"))
+      -> getByTestId(~matcher=#Str("h1-heading"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -484,7 +484,7 @@ describe("ReactTestingLibrary", () => {
     test("getAllByTestId works", () =>
       element
       -> render()
-      -> getAllByTestId(~matcher=#Str("h1-heading"))
+      -> getAllByTestId(~matcher=#Str("h1-heading"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -492,7 +492,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByTestId works", () =>
       element
       -> render()
-      -> queryByTestId(~matcher=#Str("h1-heading"))
+      -> queryByTestId(~matcher=#Str("h1-heading"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -500,7 +500,7 @@ describe("ReactTestingLibrary", () => {
     test("queryByTestId works (element not found)", () =>
       element
       -> render()
-      -> queryByTestId(~matcher=#Str("!@#$h1-heading!@#$"))
+      -> queryByTestId(~matcher=#Str("!@#$h1-heading!@#$"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -508,7 +508,7 @@ describe("ReactTestingLibrary", () => {
     test("queryAllByTestId works", () =>
       element
       -> render()
-      -> queryAllByTestId(~matcher=#Str("h1-heading"))
+      -> queryAllByTestId(~matcher=#Str("h1-heading"), ())
       -> expect
       -> toMatchSnapshot
     )
@@ -516,14 +516,14 @@ describe("ReactTestingLibrary", () => {
       element
       -> render()
       -> findByTestId(~matcher=#Str("h1-heading"), ())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
 
     testPromise("findAllByTestId works", () =>
       element
       -> render()
       -> findAllByTestId(~matcher=#Str("h1-heading"), ())
-      |> Js.Promise.then_(result => result -> expect -> toMatchSnapshot -> Js.Promise.resolve)
+      -> Promise.then(result => result -> expect -> toMatchSnapshot -> Promise.resolve)
     )
   })
 
@@ -590,7 +590,7 @@ describe("ReactTestingLibrary", () => {
       -> firstChild
       -> innerHTML
       -> expect
-      |> toEqual(text)
+      -> toEqual(text)
     }
 
     check("hi") -> ignore
@@ -605,9 +605,14 @@ describe("ReactTestingLibrary", () => {
   test("act works", () => {
     let result = <Counter /> -> render()
 
-    act(() => result -> getByText(~matcher=#Str("+"),()) -> FireEvent.click -> ignore)
+    act(() => {
+      result
+      -> getByText(~matcher=#Str("+"), ())
+      -> FireEvent.click()
+      -> ignore
+    })
 
-    result -> getByText(~matcher=#Str("Count: 1")) -> expect -> toMatchSnapshot
+    result -> getByText(~matcher=#Str("Count: 1"), ()) -> expect -> toMatchSnapshot
   })
 
   testPromise("Cleaunp, (element not found)", () => {
@@ -615,7 +620,7 @@ describe("ReactTestingLibrary", () => {
 
     cleanup()
 
-    Js.Promise.resolve(
+    Promise.resolve(
       result -> queryByTestId(~matcher=#Str("h1-heading"),()) -> expect -> toMatchSnapshot,
     )
   })
