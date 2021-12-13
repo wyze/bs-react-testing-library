@@ -1,10 +1,10 @@
-# bs-react-testing-library &middot; [![Build Status][actions-image]][actions-url] [![npm][npm-image]][npm-url] [![Codecov][codecov-image]][codecov-url]
+# rescript-react-testing-library &middot; [![Build Status][actions-image]][actions-url] [![npm][npm-image]][npm-url] [![Codecov][codecov-image]][codecov-url]
 
-> [BuckleScript](//github.com/BuckleScript/bucklescript) bindings for [react-testing-library](//github.com/kentcdodds/react-testing-library).
+> [Rescript](https://rescript-lang.org) bindings for [react-testing-library](//github.com/kentcdodds/react-testing-library).
 
 ## Documentation
 
-[**Read the docs**](//testing-library.com/docs/bs-react-testing-library/intro) | [Edit the docs](//github.com/alexkrolick/testing-library-docs)
+[**Read the docs**](https://testing-library.com/docs/bs-react-testing-library/intro) | [Edit the docs](https://github.com/alexkrolick/testing-library-docs)
 
 ## Installation
 
@@ -23,19 +23,19 @@ $ npm install --save-dev bs-react-testing-library
 ```json
 {
   "bs-dev-dependencies": [
-    "bs-react-testing-library"
+    "resript-react-testing-library"
   ]
 }
 ```
 
-#### With [`bs-jest`](//github.com/glennsl/bs-jest)
+#### With [`rescript-jest`](//github.com/glennsl/rescript-jest)
 
 ```ocaml
 /* Component_test.re */
 
-open Jest;
-open Expect;
-open ReactTestingLibrary;
+open GlennslRescriptJest.Jest
+open Expect
+open ReactTestingLibrary
 
 test("Component renders", () =>
   <div style=ReactDOMRe.Style.make(~color="rebeccapurple", ())>
@@ -75,6 +75,14 @@ $ yarn test
 ## Change Log
 
 > [Full Change Log](changelog.md)
+
+###[v0.9.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.9.0)
+
+- Upgrade to latest JavaScript dependencies
+- Upgrade to [Rescript 9](https://rescript-lang.org/docs/manual/latest/introduction)
+- Upgrade to [ryyppy/rescript-promise](https://github.com/ryyppy/rescript-promise#rescript-promise)
+- Upgrade to [@glennsl/rescript-jest](https://github.com/glennsl/rescript-jest#readme)
+- - Upgrade to [rescript-dom-testing-library](https://github.com/wyze/bs-dom-testing-library#readme)
 
 ### [v0.8.0](https://github.com/wyze/bs-react-testing-library/releases/tag/v0.8.0) (2020-10-21)
 

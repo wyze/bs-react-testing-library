@@ -2,11 +2,11 @@
   "name": "rescript-react-testing-library",
   "version": "0.8.0",
   "description": "Rescript bindings for react-testing-library based on Neil Kistner's BuckleScript bindings for React Testing Library",
-  "repository": "sacarr/rescript-react-testing-library",
+  "repository": "wyze/bs-react-testing-library",
   "author": {
-    "name": "Ratoon, LLC",
-    "email": "info@ratooncorp.io",
-    "url": "https://ratooncorp.io"
+    "name": "Neil Kistner",
+    "email": "neil.kistner@gmail.com",
+    "url": "https://neilkistner.com"
   },
   "license": "MIT",
   "files": [
@@ -15,17 +15,17 @@
     "bsconfig.json"
   ],
   "scripts": {
-    "build": "rescript build",
-    "clean": "run-p clean:rescript clean:project",
-    "clean:rescript": "rescript clean -with-deps",
+    "build": "rescript",
+    "clean": "run-s clean:rescript clean:project",
+    "clean:rescript": "rescript clean",
     "clean:project": "rimraf _coverage lib .merlin *.coverage",
     "jest": "jest",
     "postversion": "github-release",
-    "prebuild": "yarn clean",
-    "pretest": "yarn build",
-    "preversion": "yarn build",
-    "test": "yarn jest",
-    "test:coverage": "BISECT_ENABLE=yes yarn test",
+    "prebuild": "npm run clean",
+    "pretest": "npm run build",
+    "preversion": "npm run build",
+    "test": "npm run jest",
+    "test:coverage": "BISECT_ENABLE=yes npm test",
     "version": "changelog"
   },
   "keywords": [
@@ -36,23 +36,23 @@
   "dependencies": {
     "@rescript/react": "^0.10.3",
     "@testing-library/react": "^11.1.0",
-    "bs-dom-testing-library": "^0.7.0",
+    "rescript-dom-testing-library": "^0.8.0",
     "jest": "^27.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
-    "@glennsl/bs-jest": "^0.7.0",
+    "@glennsl/rescript-jest": "^0.8.1",
+    "@ryyppy/rescript-promise": "^2.1.0",
     "@sheerun/mutationobserver-shim": "^0.3.3",
     "@wyze/changelog": "^1.0.0",
     "@wyze/github-release": "^1.1.1",
     "babel-jest": "^27.3.1",
     "bisect_ppx": "^2.6.3",
+    "npm-run-all": "^4.1.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rescript": "^9.1.4",
-    "rimraf": "^3.0.2",
-    "yarn-run-all": "^3.1.1"
-  },
-  "packageManager": "yarn@3.1.0"
+    "rimraf": "^3.0.2"
+  }
 }
