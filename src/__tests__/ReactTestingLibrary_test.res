@@ -1,6 +1,6 @@
 @@coverage(exclude_file)
 
-open GlennslRescriptJest.Jest
+open Jest
 
 afterAll(Bisect.Runtime.write_coverage_data)
 
