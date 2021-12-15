@@ -1,7 +1,7 @@
 {
-  "name": "bs-react-testing-library",
+  "name": "rescript-react-testing-library",
   "version": "0.8.0",
-  "description": "BuckleScript bindings for react-testing-library.",
+  "description": "Rescript bindings for react-testing-library based on Neil Kistner's BuckleScript bindings for React Testing Library",
   "repository": "wyze/bs-react-testing-library",
   "author": {
     "name": "Neil Kistner",
@@ -10,47 +10,49 @@
   },
   "license": "MIT",
   "files": [
-    "src/*.re",
-    "src/*.rei",
+    "src/*.res",
+    "src/*.resi",
     "bsconfig.json"
   ],
   "scripts": {
-    "build": "bsb -make-world",
-    "clean": "run-p clean:*",
-    "clean:bsb": "bsb -clean-world",
+    "build": "rescript",
+    "clean": "run-s clean:rescript clean:project",
+    "clean:rescript": "rescript clean",
     "clean:project": "rimraf _coverage lib .merlin *.coverage",
-    "jest": "jest --setupTestFrameworkScriptFile=./setupTests.js",
+    "jest": "jest",
     "postversion": "github-release",
-    "prebuild": "yarn clean",
-    "pretest": "yarn build",
-    "preversion": "yarn build",
-    "test": "yarn jest",
-    "test:coverage": "BISECT_ENABLE=yes yarn test",
+    "prebuild": "npm run clean",
+    "pretest": "npm run build",
+    "preversion": "npm run build",
+    "test": "npm run jest",
+    "test:coverage": "BISECT_ENABLE=yes npm test",
     "version": "changelog"
   },
   "keywords": [
-    "bucklescript",
+    "rescript",
     "react",
     "testing"
   ],
   "dependencies": {
+    "@rescript/react": "^0.10.3",
     "@testing-library/react": "^11.1.0",
-    "bs-dom-testing-library": "^0.7.0"
-  },
-  "peerDependencies": {
-    "reason-react": "< 0.8.0"
+    "jest": "^27.3.1",
+    "rescript-dom-testing-library": "^0.8.0"
   },
   "devDependencies": {
-    "@glennsl/bs-jest": "^0.5.1",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@glennsl/rescript-jest": "^0.9.0",
+    "@ryyppy/rescript-promise": "^2.1.0",
     "@sheerun/mutationobserver-shim": "^0.3.3",
     "@wyze/changelog": "^1.0.0",
     "@wyze/github-release": "^1.1.1",
-    "bisect_ppx": "^2.5.0",
-    "bs-platform": "^8.3.1",
+    "babel-jest": "^27.3.1",
+    "bisect_ppx": "^2.6.3",
     "npm-run-all": "^4.1.5",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "reason-react": "^0.9.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rescript": "^9.1.4",
     "rimraf": "^3.0.2"
   }
 }
